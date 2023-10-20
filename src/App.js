@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import "./css/App.css";
+
+//component
+import Navigation from "./components/Navigation";
+import Body from "./components/Body";
+
+const Wrapper = styled.div`
+  margin-top: 30px;
+  width: 60vw;
+
+  @media (max-width: 1300px) {
+    width: 70vw;
+  }
+
+  @media (max-width: 1000px) {
+    width: 80vw;
+  }
+
+  @media (max-width: 800px) {
+    width: 90vw;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Navigation />
+      <Body />
+    </Wrapper>
   );
 }
 

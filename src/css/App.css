@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
+
+body {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+
+  font-family: "Nanum Pen Script", cursive;
+  font-family: "Yeon Sung", cursive;
+}
+
+#root {
+  height: 100vh;
+  background-color: black;
+  border-radius: 30px;
+  -webkit-tap-highlight-color: transparent;
+}

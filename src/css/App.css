@@ -9,8 +9,8 @@ body {
   min-height: 100vh;
   overflow: auto;
 
-  font-family: "Nanum Pen Script", cursive;
-  font-family: "Yeon Sung", cursive;
+  /* font-family: "Nanum Pen Script", cursive;
+  font-family: "Yeon Sung", cursive; */
 }
 
 #root {

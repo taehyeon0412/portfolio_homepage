@@ -58,6 +58,7 @@ const IntroTitle = styled.span`
 const IntroP = styled.p`
   margin-top: 30px;
   color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
   line-height: 1.5;
   opacity: 0;
 

@@ -10,18 +10,22 @@ const Wrapper = styled.div`
   margin-top: 30px;
   width: 60vw;
   display: grid;
-  grid-template-rows: 70px 500px 1fr;
+  grid-template-rows: 70px 500px auto;
 
   @media (max-width: 1300px) {
-    width: 70vw;
-  }
-
-  @media (max-width: 1000px) {
     width: 80vw;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1200px) {
+    width: 85vw;
+  }
+
+  @media (max-width: 1000px) {
     width: 90vw;
+  }
+
+  @media (max-width: 800px) {
+    width: 95vw;
   }
 `;
 

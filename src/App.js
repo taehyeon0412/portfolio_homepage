@@ -3,7 +3,8 @@ import "./css/App.css";
 
 //component
 import Navigation from "./components/Navigation";
-import Body from "./components/Body";
+import IntroBody from "./components/IntroBody";
+import ProjectBody from "./components/ProjectBody";
 
 const Wrapper = styled.div`
   margin-top: 30px;
@@ -26,7 +27,8 @@ function App() {
   return (
     <Wrapper>
       <Navigation />
-      <Body />
+      <IntroBody />
+      <ProjectBody />
     </Wrapper>
   );
 }

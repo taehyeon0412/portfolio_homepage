@@ -9,6 +9,7 @@ import ProjectBody from "./components/ProjectBody";
 const Wrapper = styled.div`
   margin-top: 30px;
   width: 60vw;
+
   display: grid;
   grid-template-rows: 70px 500px auto;
 

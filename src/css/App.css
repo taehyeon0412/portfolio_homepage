@@ -9,6 +9,11 @@ body {
   min-height: 100vh;
   overflow: auto;
 
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
   /* font-family: "Nanum Pen Script", cursive;
   font-family: "Yeon Sung", cursive; */
 }

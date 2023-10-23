@@ -1,4 +1,10 @@
 import styled from "styled-components";
+
+//assets
+import { ReactComponent as GithubIcon } from "../assets/github.svg";
+import { ReactComponent as LinkIcon } from "../assets/link.svg";
+
+//util
 import { portfolioList } from "./../util/portfolioList";
 
 const Wrapper = styled.div``;
@@ -25,6 +31,15 @@ const PortfolioDiv = styled.div`
   img {
     border-radius: 20px;
     width: 100%;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
   }
 `;
 
@@ -36,7 +51,7 @@ const PortfolioDc = styled.div`
 
   span {
     font-family: "Nanum Pen Script", cursive;
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 700;
 
     background-clip: border-box;
@@ -62,6 +77,43 @@ const PortfolioDc = styled.div`
   }
 `;
 
+const PortfolioDcSkillDiv = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+const PortfolioDcSkill = styled.div`
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  padding: 5px 10px 5px 10px;
+  border: 2px solid;
+  border-radius: 10px;
+`;
+
+const LinkDiv = styled.div`
+  display: flex;
+  margin-top: 10px;
+  gap: 20px;
+`;
+
+const commonLinkStyle = `
+width: 40px;
+height: 40px;
+fill: white;
+
+&:hover {
+  cursor: pointer;
+  }
+`;
+
+const LinkGithubIcon = styled(GithubIcon)`
+  ${commonLinkStyle}
+`;
+
+const LinkWepIcon = styled(LinkIcon)`
+  ${commonLinkStyle}
+`;
+
 const SkillsHeader = styled.header``;
 
 const SkillsImg = styled.div``;
@@ -71,12 +123,36 @@ function ProjectBody() {
     <Wrapper>
       <Section className="PortfolioSection">
         <h1>Project</h1>
+
         {portfolioList.map((it) => (
           <PortfolioDiv key={it.Img_id}>
             <img src={it.Img} alt="portfolio Img" />
+
             <PortfolioDc>
               <span>{it.Title}</span>
               <p>{it.description}</p>
+              {/* 타이틀+설명 */}
+
+              <PortfolioDcSkillDiv>
+                {it.skill.map((skill, index) => (
+                  <PortfolioDcSkill key={index}>{skill}</PortfolioDcSkill>
+                ))}
+                {/* skill 부분 map으로 각각 div로 불러옴  */}
+              </PortfolioDcSkillDiv>
+
+              <LinkDiv>
+                <a
+                  href={it.githubURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LinkGithubIcon />
+                </a>
+                <a href={it.wepURL} target="_blank" rel="noopener noreferrer">
+                  <LinkWepIcon />
+                </a>
+              </LinkDiv>
+              {/* 클릭시 외부링크 새창으로 열림 */}
             </PortfolioDc>
           </PortfolioDiv>
         ))}

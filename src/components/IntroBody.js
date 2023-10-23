@@ -4,12 +4,7 @@ import useInterval from "use-interval";
 
 const Wrapper = styled.div`
   margin-top: 150px;
-`;
-
-const Section = styled.section`
-  &.IntroSection {
-    margin-bottom: 100px;
-  }
+  margin-bottom: 100px;
 `;
 
 const IntroTitle = styled.span`
@@ -113,16 +108,15 @@ function IntroBody() {
 
   return (
     <Wrapper>
-      <Section className="IntroSection">
-        <IntroTitle>{landingTitle}</IntroTitle>
-        <IntroP>
-          차별화된 서비스를 만들어내는 개발자
-          <br />
-          꼼꼼하게 빈 틈을 채워나가는 개발자
-          <br />
-          사람들이 필요로 하는 것이 무엇인지 고민하는 개발자
-        </IntroP>
-      </Section>
+      <IntroTitle>{landingTitle}</IntroTitle>
+
+      <IntroP>
+        차별화된 서비스를 만들어내는 개발자
+        <br />
+        꼼꼼하게 빈 틈을 채워나가는 개발자
+        <br />
+        사람들이 필요로 하는 것이 무엇인지 고민하는 개발자
+      </IntroP>
     </Wrapper>
   );
 }

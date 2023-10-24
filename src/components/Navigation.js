@@ -39,7 +39,6 @@ function Navigation() {
       <ItemUl>
         <ItemLi>Projects</ItemLi>
         <ItemLi>Contact</ItemLi>
-        <ItemLi>Resume</ItemLi>
       </ItemUl>
     </Wrapper>
   );

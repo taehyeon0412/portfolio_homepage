@@ -5,6 +5,7 @@ import "./css/App.css";
 import Navigation from "./components/Navigation";
 import IntroBody from "./components/IntroBody";
 import ProjectBody from "./components/ProjectBody";
+import TopButton from "./components/TopButton";
 
 const Wrapper = styled.div`
   margin-top: 30px;
@@ -36,6 +37,7 @@ function App() {
       <Navigation />
       <IntroBody />
       <ProjectBody />
+      <TopButton />
     </Wrapper>
   );
 }

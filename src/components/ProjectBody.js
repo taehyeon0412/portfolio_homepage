@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 //util
 import { portfolioList } from "./../util/portfolioList";
+import { skillList } from "../util/skillList";
 
 //Components
 import PortfolioItem from "./PortfolioItem";
@@ -38,14 +39,41 @@ const Section = styled.section`
   }
 
   &.SkillsSection {
-    margin-top: 150px;
+    margin-top: 120px;
     margin-bottom: 200px;
   }
 `;
 
-const SkillsHeader = styled.header``;
+const SkillsHeader = styled.header`
+  font-size: 25px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+`;
 
-const SkillsImg = styled.div``;
+const SkillsImgWrapper = styled.div`
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  align-items: center;
+`;
+
+const SkillsImg = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  img {
+    width: 90px;
+    height: 90px;
+  }
+
+  span {
+    text-align: center;
+    font-weight: 700;
+  }
+`;
+
+//---------------------------------------- styled
 
 function ProjectBody() {
   return (
@@ -69,7 +97,15 @@ function ProjectBody() {
       </Section>
       <Section className="SkillsSection">
         <SkillsHeader>Skills & Tools</SkillsHeader>
-        {/* 스킬 이미지 그리드로 나오게 하기 */}
+
+        <SkillsImgWrapper>
+          {skillList.map((skill, index) => (
+            <SkillsImg key={index}>
+              <img src={skill.icon} alt={skill.name} />
+              <span>{skill.name}</span>
+            </SkillsImg>
+          ))}
+        </SkillsImgWrapper>
       </Section>
     </Wrapper>
   );

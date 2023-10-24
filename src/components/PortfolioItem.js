@@ -66,6 +66,10 @@ const PortfolioDc = styled.div`
 const PortfolioDcSkillDiv = styled.div`
   display: flex;
   gap: 10px;
+
+  @media (max-width: 1150px) {
+    gap: 5px;
+  }
 `;
 //포토폴리오 오른쪽 설명 스킬div
 
@@ -76,6 +80,7 @@ const PortfolioDcSkill = styled.div`
   border: 2px solid;
   border-radius: 10px;
 `;
+//포토폴리오 오른쪽 설명 개별 스킬div
 
 const LinkDiv = styled.div`
   display: flex;

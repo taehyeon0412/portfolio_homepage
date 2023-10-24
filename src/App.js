@@ -8,12 +8,12 @@ import ProjectBody from "./components/ProjectBody";
 
 const Wrapper = styled.div`
   margin-top: 30px;
-  width: 60vw;
+  width: 65vw;
 
   display: grid;
   grid-template-rows: 70px 500px auto;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1400px) {
     width: 80vw;
   }
 

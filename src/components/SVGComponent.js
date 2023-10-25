@@ -47,7 +47,7 @@ const AnimatedPath = styled.path`
 
 const SVGComponent = () => (
   <svg
-    enable-background="new 0 0 128 128"
+    enableBackground="new 0 0 128 128"
     id="Слой_1"
     version="1.1"
     viewBox="0 0 128 128"

@@ -96,6 +96,7 @@ fill: white;
 &:hover {
   cursor: pointer;
   fill : rgba(255, 255, 255, 0.5);
+  scale: 1.1;
   }
 `;
 

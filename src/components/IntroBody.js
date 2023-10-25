@@ -2,12 +2,52 @@ import { useMemo, useState } from "react";
 import styled from "styled-components";
 import useInterval from "use-interval";
 
+//SVG
+import { ReactComponent as ShootingStar } from "../assets/shooting_star.svg";
+
 const Wrapper = styled.div`
   margin-top: 150px;
   margin-bottom: 100px;
+  position: relative;
+`;
+
+const ShootingStarContainer = styled.div`
+  position: absolute;
+  background-color: transparent;
+  width: 50%;
+  height: 100%;
+  right: 0;
+
+  @media (max-width: 1000px) {
+    width: 30%;
+    height: 90%;
+  }
+
+  @media (max-width: 860px) {
+    width: 20%;
+    height: 70%;
+  }
+
+  @media (max-width: 750px) {
+    width: 20%;
+    height: 60%;
+  }
+
+  @media (max-width: 530px) {
+    width: 20%;
+    height: 60%;
+    right: 12%;
+  }
+`;
+//SVG컨테이너
+
+const ShootingStarSVG = styled(ShootingStar)`
+  width: 100%;
+  height: 100%;
 `;
 
 const IntroTitle = styled.span`
+  position: relative;
   font-size: 40px;
   font-weight: 900;
 
@@ -56,6 +96,7 @@ const IntroTitle = styled.span`
 `;
 
 const IntroP = styled.p`
+  position: relative;
   margin-top: 30px;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 700;
@@ -79,6 +120,8 @@ const IntroP = styled.p`
     font-size: 15px;
   }
 `;
+
+//-----------------------------styled
 
 function IntroBody() {
   const completedTitle = useMemo(() => {
@@ -109,6 +152,10 @@ function IntroBody() {
 
   return (
     <Wrapper>
+      <ShootingStarContainer>
+        <ShootingStarSVG />
+      </ShootingStarContainer>
+
       <IntroTitle>{landingTitle}</IntroTitle>
 
       <IntroP>

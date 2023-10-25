@@ -1,14 +1,29 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-const ScrollTopButton = styled.button`
+//svg
+/* import { ReactComponent as RocketSvg } from "../assets/rocket.svg"; */
+import SVGComponent from "./SVGComponent";
+
+const AnimationRocketSvg = styled.div`
   position: fixed;
-  bottom: 12%;
-  right: 100px;
-  padding: 30px;
+  bottom: 3%;
+  right: 1%;
+  border: none;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   display: ${(props) => (props.$showButton ? "block" : "none")};
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
+
+//--------------------------------------------------styled
 
 function TopButton() {
   const [showButton, setShowButton] = useState(false);
@@ -48,9 +63,9 @@ function TopButton() {
   // 페이지 스크롤 이벤트를 감지하여 버튼을 표시 or 숨김 처리
 
   return (
-    <ScrollTopButton $showButton={showButton} onClick={scrollToTop}>
-      업
-    </ScrollTopButton>
+    <AnimationRocketSvg $showButton={showButton} onClick={scrollToTop}>
+      <SVGComponent />
+    </AnimationRocketSvg>
   );
 }
 

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -34,11 +35,16 @@ const ItemLi = styled.li`
 `;
 
 function Navigation() {
+  const navigate = useNavigate();
+
+  const navigateToModal = () => {
+    navigate("/contact", { replace: true });
+  };
+
   return (
     <Wrapper>
       <ItemUl>
-        <ItemLi>Projects</ItemLi>
-        <ItemLi>Contact</ItemLi>
+        <ItemLi onClick={navigateToModal}>Contact</ItemLi>
       </ItemUl>
     </Wrapper>
   );

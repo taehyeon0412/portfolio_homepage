@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 //assets
 import { ReactComponent as GithubIcon } from "../assets/github.svg";
@@ -146,17 +147,23 @@ const PortfolioDescriptionDiv = ({
    ProjectBody에 props를 넘겨준다  */
 
 function PortfolioItem({ item }) {
+  const navigate = useNavigate();
+
+  const navigateToModal = () => {
+    navigate(`/project/${item.AddressTitle}`, { replace: true });
+  };
+
   return (
     <PortfolioDiv>
       {item.Img_id % 2 === 1 ? (
         <>
-          <img src={item.Img} alt="portfolio_Img" />
+          <img src={item.Img} alt="portfolio_Img" onClick={navigateToModal} />
           <PortfolioDescriptionDiv {...item} />
         </>
       ) : (
         <>
           <PortfolioDescriptionDiv {...item} />
-          <img src={item.Img} alt="portfolio_Img" />
+          <img src={item.Img} alt="portfolio_Img" onClick={navigateToModal} />
         </>
       )}
     </PortfolioDiv>

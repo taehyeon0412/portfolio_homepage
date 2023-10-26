@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useMatch, useNavigate } from "react-router-dom";
 
 //assets
 import { ReactComponent as GithubIcon } from "../assets/github.svg";
@@ -146,24 +146,42 @@ const PortfolioDescriptionDiv = ({
    it.Img_id가 홀수일때 PortfolioDc ,img 순서 겹치는 부분 모듈화하고
    ProjectBody에 props를 넘겨준다  */
 
-function PortfolioItem({ item }) {
+function PortfolioItem({ item, menuName }) {
   const navigate = useNavigate();
 
-  const navigateToModal = () => {
-    navigate(`/project/${item.AddressTitle}`, { replace: true });
+  const modalMatch = useMatch(`/${menuName}/:Img_id`);
+
+  const onBoxClicked = () => {
+    navigate(`/${menuName}/${item.Img_id}`, { replace: true });
+
+    if (modalMatch) {
+      console.log(`모달매치됨 +${menuName} ${item.Img_id}`);
+    }
   };
 
   return (
     <PortfolioDiv>
       {item.Img_id % 2 === 1 ? (
         <>
-          <img src={item.Img} alt="portfolio_Img" onClick={navigateToModal} />
+          <img
+            src={item.Img}
+            alt="portfolio_Img"
+            onClick={() => {
+              onBoxClicked(item.Img_id);
+            }}
+          />
           <PortfolioDescriptionDiv {...item} />
         </>
       ) : (
         <>
           <PortfolioDescriptionDiv {...item} />
-          <img src={item.Img} alt="portfolio_Img" onClick={navigateToModal} />
+          <img
+            src={item.Img}
+            alt="portfolio_Img"
+            onClick={() => {
+              onBoxClicked(item.Img_id);
+            }}
+          />
         </>
       )}
     </PortfolioDiv>

@@ -1,5 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { useMatch, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+
+//Components
+import ContactModal from "./ContactModal";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,12 +23,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const ItemUl = styled.ul`
-  display: flex;
-  gap: 15px;
-`;
-
-const ItemLi = styled.li`
+const ContactDiv = styled(motion.div)`
   padding: 10px;
   border-radius: 10px;
 
@@ -34,18 +33,28 @@ const ItemLi = styled.li`
   }
 `;
 
-function Navigation() {
+function Navigation({ menuName }) {
   const navigate = useNavigate();
 
   const navigateToModal = () => {
-    navigate("/contact", { replace: true });
+    navigate(`/${menuName}/contact`, { replace: true });
+
+    if (modalMatch) {
+      console.log(`모달매치됨 +${menuName}`);
+    }
   };
+
+  const modalMatch = useMatch(`/${menuName}/contact`);
 
   return (
     <Wrapper>
-      <ItemUl>
-        <ItemLi onClick={navigateToModal}>Contact</ItemLi>
-      </ItemUl>
+      <AnimatePresence>
+        <ContactDiv onClick={navigateToModal} layoutId="contact">
+          Contact
+        </ContactDiv>
+
+        {modalMatch ? <ContactModal menuName={menuName} /> : null}
+      </AnimatePresence>
     </Wrapper>
   );
 }

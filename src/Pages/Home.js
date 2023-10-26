@@ -33,9 +33,9 @@ const Wrapper = styled.div`
 function Home() {
   return (
     <Wrapper>
-      <Navigation />
+      <Navigation menuName={"contact"} />
       <IntroBody />
-      <ProjectBody />
+      <ProjectBody menuName={"project"} />
       <TopButton />
     </Wrapper>
   );

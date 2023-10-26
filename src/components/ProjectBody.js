@@ -75,14 +75,14 @@ const SkillsImg = styled.div`
 
 //---------------------------------------- styled
 
-function ProjectBody() {
+function ProjectBody({ menuName }) {
   return (
     <Wrapper>
       <Section className="PortfolioSection">
         <h1>Project</h1>
 
         {portfolioList.map((it, index) => (
-          <PortfolioItem key={it.Img_id} item={it} />
+          <PortfolioItem key={it.Img_id} item={it} menuName={menuName} />
         ))}
       </Section>
 

@@ -37,19 +37,19 @@ function Navigation({ menuName }) {
   const navigate = useNavigate();
 
   const navigateToModal = () => {
-    navigate(`/${menuName}/contact`, { replace: true });
+    navigate(`/${menuName}/contact-me`, { replace: true });
 
     if (modalMatch) {
       console.log(`모달매치됨 +${menuName}`);
     }
   };
 
-  const modalMatch = useMatch(`/${menuName}/contact`);
+  const modalMatch = useMatch(`/${menuName}/contact-me`);
 
   return (
     <Wrapper>
       <AnimatePresence>
-        <ContactDiv onClick={navigateToModal} layoutId="contact">
+        <ContactDiv onClick={navigateToModal} layoutId="contact" key="contact">
           Contact
         </ContactDiv>
 

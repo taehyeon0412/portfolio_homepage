@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     font-size: 20px;
   }
 
-  @media (max-width: 510px) {
+  @media (max-width: 850px) {
     justify-content: center;
   }
 `;

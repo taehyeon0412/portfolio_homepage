@@ -31,8 +31,8 @@ export const ModalBox = styled(motion.div)`
   grid-template-rows: 45% 50%;
 
   position: fixed;
-  width: 280px;
-  height: 350px;
+  width: 420px;
+  height: 525px;
   top: 20%;
   bottom: 0;
   left: 0;
@@ -47,6 +47,16 @@ export const ModalBox = styled(motion.div)`
 
   ::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (max-width: 1300px) {
+    width: 336px;
+    height: 420px;
+  }
+
+  @media (max-width: 700px) {
+    width: 280px;
+    height: 350px;
   }
 `;
 //모달창
@@ -102,10 +112,18 @@ const IntroduceText = styled.div`
 
   span {
     color: black;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 700;
 
     font-family: "Nanum Pen Script", cursive;
+
+    @media (max-width: 1300px) {
+      font-size: 25px;
+    }
+
+    @media (max-width: 700px) {
+      font-size: 22px;
+    }
   }
 `;
 //모달 자기소개 부분
@@ -128,14 +146,24 @@ const ContactImgDiv = styled.div`
   gap: 15px;
 
   a {
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
+
+    @media (max-width: 1300px) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media (max-width: 700px) {
+      width: 30px;
+      height: 30px;
+    }
   }
 `;
 
 const commonIconStyle = `
-width: 30px;
-height: 30px;
+width: 100%;
+height: 100%;
 
 &:hover {
   cursor: pointer;
@@ -157,9 +185,17 @@ const ContactBlogIcon = styled(BlogIcon)`
 `;
 
 const ContactSpan = styled.span`
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   color: black;
+
+  @media (max-width: 1300px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 15px;
+  }
 `;
 
 //모달 연락처 부분

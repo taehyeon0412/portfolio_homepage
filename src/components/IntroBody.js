@@ -7,36 +7,36 @@ import { ReactComponent as ShootingStar } from "../assets/shooting_star.svg";
 
 const Wrapper = styled.div`
   margin-top: 150px;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
   position: relative;
 `;
 
 const ShootingStarContainer = styled.div`
   position: absolute;
   background-color: transparent;
-  width: 50%;
-  height: 100%;
+  height: 300px;
   right: 0;
 
   @media (max-width: 1000px) {
-    width: 30%;
-    height: 90%;
+    height: 250px;
   }
 
-  @media (max-width: 860px) {
-    width: 20%;
-    height: 70%;
+  @media (max-width: 900px) {
+    height: 200px;
   }
 
-  @media (max-width: 750px) {
-    width: 20%;
-    height: 60%;
+  @media (max-width: 650px) {
+    height: 150px;
+    right: 10%;
+    top: -80%;
   }
 
-  @media (max-width: 530px) {
-    width: 20%;
-    height: 60%;
-    right: 12%;
+  @media (max-width: 550px) {
+    top: -110%;
+  }
+
+  @media (max-width: 430px) {
+    top: -170%;
   }
 `;
 //SVG컨테이너
@@ -118,6 +118,10 @@ const IntroP = styled.p`
 
   @media (max-width: 430px) {
     font-size: 15px;
+  }
+
+  @media (max-width: 385px) {
+    font-size: 14px;
   }
 `;
 

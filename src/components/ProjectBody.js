@@ -48,6 +48,10 @@ const SkillsHeader = styled.header`
   font-size: 25px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.9);
+
+  @media (max-width: 500px) {
+    font-size: 23px;
+  }
 `;
 
 const SkillsImgWrapper = styled.div`
@@ -62,6 +66,7 @@ const SkillsImg = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
+
   img {
     width: 90px;
     height: 90px;
@@ -70,11 +75,48 @@ const SkillsImg = styled.div`
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
+
+    @media (max-width: 850px) {
+      width: 75px;
+      height: 75px;
+    }
+
+    @media (max-width: 650px) {
+      width: 70px;
+      height: 70px;
+    }
+
+    @media (max-width: 500px) {
+      width: 60px;
+      height: 60px;
+    }
+
+    @media (max-width: 430px) {
+      width: 50px;
+      height: 50px;
+    }
+
+    @media (max-width: 385px) {
+      width: 48px;
+      height: 48px;
+    }
   }
 
   span {
     text-align: center;
     font-weight: 700;
+
+    @media (max-width: 650px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 385px) {
+      font-size: 12px;
+    }
   }
 `;
 

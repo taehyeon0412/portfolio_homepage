@@ -65,6 +65,10 @@ const PortfolioDc = styled.div`
       #0abde3,
       #85ffbd
     );
+
+    @media (max-width: 430px) {
+      font-size: 40px;
+    }
   }
 
   p {
@@ -73,16 +77,22 @@ const PortfolioDc = styled.div`
     white-space: pre-line;
     line-height: 1.5;
     font-weight: 700;
+
+    @media (max-width: 430px) {
+      white-space: normal;
+    }
   }
 
   @media (max-width: 850px) {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
+    padding-left: 0;
+    width: 80%;
   }
 
   @media (max-width: 700px) {
-    padding-left: 0; /* 더 작은 화면에서 여백 제거 */
+    padding-left: 0;
     width: 80%;
   }
 `;
@@ -94,6 +104,33 @@ const PortfolioDcSkillDiv = styled.div`
 
   @media (max-width: 1150px) {
     gap: 5px;
+  }
+
+  @media (max-width: 1100px) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 90%;
+    text-align: center;
+  }
+
+  @media (max-width: 950px) {
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+  }
+
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(6, 1fr);
+    width: 90%;
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: repeat(5, 1fr);
+    width: 90%;
+  }
+
+  @media (max-width: 430px) {
+    grid-template-columns: repeat(4, auto);
+    width: 100%;
   }
 `;
 //포토폴리오 오른쪽 설명 스킬div

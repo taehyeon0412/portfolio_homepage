@@ -1,3 +1,6 @@
+<details>
+  <summary>Source code architecture</summary>
+
 ```bash
 ─public
 │  │  favicon.ico
@@ -54,3 +57,5 @@
             portfolioList.js
             skillList.js
 ```
+
+</details>

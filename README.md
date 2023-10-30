@@ -1,3 +1,4 @@
+```bash
 ─public
 │  │  favicon.ico
 │  │  index.html
@@ -52,3 +53,4 @@
     └─util
             portfolioList.js
             skillList.js
+```

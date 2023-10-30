@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import styled, { createGlobalStyle } from "styled-components";
 import { portfolioList } from "../util/portfolioList";
-import { useMatch, useNavigate } from "react-router-dom";
+import { useLocation, useMatch, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 //IMG
 import contact_img from "../assets/contact_img.png";
@@ -208,11 +209,21 @@ function ContactModal({ menuName }) {
   //클릭하고 있는 contact 모달 매치
 
   const overlayClicked = () => {
-    if (window.location.pathname === `/${menuName}/contact-me`) {
-      navigate("/");
-    }
+    navigate(`/`, { replace: true });
   };
   //오버레이 클릭시 홈으로 이동
+
+  useEffect(() => {
+    const goBackHome = () => {
+      navigate(`/`, { replace: true });
+      console.log("모달창 뒤로가기 => 홈");
+    };
+
+    window.history.pushState(null, "", window.location.pathname);
+    window.addEventListener("popstate", goBackHome);
+
+    return () => window.removeEventListener("popstate", goBackHome);
+  }, [navigate]);
 
   return (
     <>

@@ -1,4 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
+@font-face {
+  font-family: "Beeunhye";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/earlyaccess/nanumpenscript.css");
 
 body {
   background-color: black;

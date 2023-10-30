@@ -112,13 +112,13 @@ const IntroduceText = styled.div`
 
   span {
     color: black;
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 33px;
+    font-weight: 900;
 
-    font-family: "Nanum Pen Script", cursive;
+    font-family: "Beeunhye";
 
     @media (max-width: 1300px) {
-      font-size: 25px;
+      font-size: 27px;
     }
 
     @media (max-width: 700px) {
@@ -208,7 +208,9 @@ function ContactModal({ menuName }) {
   //클릭하고 있는 contact 모달 매치
 
   const overlayClicked = () => {
-    navigate("/");
+    if (window.location.pathname === `/${menuName}/contact-me`) {
+      navigate("/");
+    }
   };
   //오버레이 클릭시 홈으로 이동
 

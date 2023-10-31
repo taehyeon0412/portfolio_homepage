@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled, { createGlobalStyle } from "styled-components";
 import { portfolioList } from "../util/portfolioList";
 import { useLocation, useMatch, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 //IMG
 import contact_img from "../assets/contact_img.webp";
@@ -109,6 +109,7 @@ const IntroduceImg = styled.div`
 const IntroduceText = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   line-height: 1.2;
 
   span {
@@ -297,4 +298,4 @@ function ContactModal({ menuName }) {
   );
 }
 
-export default ContactModal;
+export default React.memo(ContactModal);

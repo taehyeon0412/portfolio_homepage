@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 //component
 import Navigation from "../components/Navigation";
@@ -53,4 +54,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default React.memo(Home);

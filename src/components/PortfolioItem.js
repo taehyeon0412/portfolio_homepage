@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useMatch, useNavigate } from "react-router-dom";
+import React from "react";
 
 //assets
 import { ReactComponent as GithubIcon } from "../assets/github.svg";
@@ -261,4 +262,4 @@ function PortfolioItem({ item, menuName }) {
   return <PortfolioDiv>{contentRender}</PortfolioDiv>;
 }
 
-export default PortfolioItem;
+export default React.memo(PortfolioItem);

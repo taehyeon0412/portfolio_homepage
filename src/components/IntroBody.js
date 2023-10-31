@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import styled from "styled-components";
 import useInterval from "use-interval";
 
@@ -177,4 +177,4 @@ function IntroBody() {
   );
 }
 
-export default IntroBody;
+export default React.memo(IntroBody);

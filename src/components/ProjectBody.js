@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 //util
 import { portfolioList } from "./../util/portfolioList";
@@ -158,4 +159,4 @@ function ProjectBody({ menuName }) {
   );
 }
 
-export default ProjectBody;
+export default React.memo(ProjectBody);

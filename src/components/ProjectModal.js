@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+/* import { motion } from "framer-motion";
 import styled, { createGlobalStyle } from "styled-components";
 import { portfolioList } from "../util/portfolioList";
 import { useMatch, useNavigate } from "react-router-dom";
@@ -22,4 +22,4 @@ function ProjectModal(Img_id, Title, skill) {
   );
 }
 
-export default ProjectModal;
+export default ProjectModal; */

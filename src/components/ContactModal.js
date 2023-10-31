@@ -5,7 +5,7 @@ import { useLocation, useMatch, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 //IMG
-import contact_img from "../assets/contact_img.png";
+import contact_img from "../assets/contact_img.webp";
 import { ReactComponent as GithubIcon } from "../assets/contact_github.svg";
 import { ReactComponent as EmailIcon } from "../assets/email.svg";
 import { ReactComponent as BlogIcon } from "../assets/blog.svg";
@@ -205,8 +205,9 @@ const ContactSpan = styled.span`
 
 function ContactModal({ menuName }) {
   const navigate = useNavigate();
-  const modalMatch = useMatch(`/${menuName}/contact-me`);
-  //클릭하고 있는 contact 모달 매치
+
+  /* const modalMatch = useMatch(`/${menuName}/contact-me`);
+  //클릭하고 있는 contact 모달 매치 */
 
   const overlayClicked = () => {
     navigate(`/`, { replace: true });

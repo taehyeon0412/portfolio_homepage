@@ -27,6 +27,11 @@ body {
 
   /* font-family: "Nanum Pen Script", cursive;
   font-family: "Yeon Sung", cursive; */
+
+  font-family: "Beeunhye";
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
 }
 
 body::-webkit-scrollbar {

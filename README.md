@@ -1,8 +1,42 @@
+# Portfolio
+
+<br/>
+<br/>
+
+![homepage_img](https://github.com/taehyeon0412/my_homepage/assets/71374539/4db2b2ac-62f4-41c8-b548-1ed1b3d52a4a)
+
+<br/>
+<br/>
+
+## **🛠사용 기술 및 라이브러리**
+
+- React
+- CSS
+- framer-motion (애니메이션)
+- react-dom(useNavigate,useMatch)
+- styled components
+- useInterval
+- createGlobalStyle
+- Firebase
+
+<br/>
+<br/>
+
+
+
+## Route
+
+- `/` , `/home/:menuName/contact-me` home 페이지
+
+<br/>
+<br/>
+<br/>
+
 <details>
   <summary>Source code architecture</summary>
 
-```bash
-─public
+  ```bash
+├─public
 │  │  favicon.ico
 │  │  index.html
 │  │  logo192.png
@@ -11,11 +45,11 @@
 │  │  robots.txt
 │  │
 │  └─assets
-│          portfolio1.png
-│          portfolio2.png
-│          portfolio3.png
-│          portfolio4.png
-│          portfolio5.png
+│          portfolio1.webp
+│          portfolio2.webp
+│          portfolio3.webp
+│          portfolio4.webp
+│          portfolio5.webp
 │
 └─src
     │  App.js
@@ -24,7 +58,7 @@
     ├─assets
     │      blog.svg
     │      contact_github.svg
-    │      contact_img.png
+    │      contact_img.webp
     │      css_icon.svg
     │      email.svg
     │      github.svg
@@ -56,6 +90,8 @@
     └─util
             portfolioList.js
             skillList.js
+            useWindow.js
 ```
-
 </details>
+
+

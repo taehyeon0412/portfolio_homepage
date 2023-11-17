@@ -3,7 +3,7 @@
 <br/>
 <br/>
 
-[홈페이지 보기](https://taehyeon-my-homepage.web.app/){:target="_blank"}
+[홈페이지 보기](https://taehyeon-my-homepage.web.app/)
 
 
 

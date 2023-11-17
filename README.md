@@ -5,9 +5,6 @@
 
 [홈페이지 보기](https://taehyeon-my-homepage.web.app/)
 
-<a href="https://www.google.com" target="_blank">구글</a>
-
-
 
 <br/>
 <br/>

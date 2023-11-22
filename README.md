@@ -21,7 +21,6 @@
 - framer-motion (애니메이션)
 - react-dom(useNavigate,useMatch)
 - styled components
-- react-transition-group
 - useInterval
 - createGlobalStyle
 - Firebase

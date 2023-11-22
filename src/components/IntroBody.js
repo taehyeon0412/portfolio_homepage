@@ -50,6 +50,7 @@ const IntroTitle = styled.span`
   position: relative;
   font-size: 40px;
   font-weight: 900;
+  line-height: 1.2;
 
   background-clip: border-box;
   -webkit-background-clip: text;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 //component
 import Navigation from "../components/Navigation";
@@ -7,12 +7,11 @@ import IntroBody from "../components/IntroBody";
 import ProjectBody from "../components/ProjectBody";
 import TopButton from "../components/TopButton";
 
-export const Wrapper = styled.div`
+export const commonStyle = `
   margin-top: 30px;
   width: 65vw;
 
   display: grid;
-  grid-template-rows: 70px 500px auto;
 
   @media (max-width: 1400px) {
     width: 80vw;
@@ -43,9 +42,23 @@ export const Wrapper = styled.div`
   }
 `;
 
+const Wrapper = styled.div`
+  grid-template-rows: 70px 500px auto;
+  ${commonStyle}
+  opacity: ${(props) => (props.show === "true" ? "1" : "0")};
+  transition: opacity 3s ease;
+`;
+
 function Home() {
+  const [showWrapper, setShowWrapper] = useState("false");
+
+  useEffect(() => {
+    setShowWrapper("true");
+  }, []);
+  //로딩될 때, Wrapper의 opacity를 1로 변경
+
   return (
-    <Wrapper>
+    <Wrapper show={showWrapper}>
       <Navigation menuName={"home"} />
       <IntroBody />
       <ProjectBody menuName={"project"} />

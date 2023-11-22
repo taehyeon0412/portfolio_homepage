@@ -129,7 +129,7 @@ const IntroP = styled.p`
 
 function IntroBody() {
   const completedTitle = useMemo(() => {
-    return "안녕하세요! \n 프론트엔드 개발자 곽태현입니다.";
+    return "안녕하세요! \n 프론트엔드 개발자를 꿈꾸는 \n 곽태현입니다.";
   }, []);
   const [landingTitle, setLandingTitle] = useState("");
   const [count, setCount] = useState(0);
@@ -148,7 +148,7 @@ function IntroBody() {
       let result = prev ? prev + completedTitle[count] : completedTitle[0];
 
       // count를 증가시킨다.
-      setCount((prev) => prev + 1);
+      setCount((prev) => prev + 0.5);
       //useInterval 버그인지 모르겠는데 1로 하면 1357..로 글자가 나와서0.5로 수정함
 
       /* 배포를 할때는 0.5로 하면 undefined가 나오는데 

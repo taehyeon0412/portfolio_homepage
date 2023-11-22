@@ -114,17 +114,15 @@ const IntroduceText = styled.div`
 
   span {
     color: black;
-    font-size: 33px;
+    font-size: 20px;
     font-weight: 900;
 
-    font-family: "Beeunhye";
-
     @media (max-width: 1300px) {
-      font-size: 27px;
+      font-size: 17px;
     }
 
     @media (max-width: 700px) {
-      font-size: 22px;
+      font-size: 14px;
     }
   }
 `;

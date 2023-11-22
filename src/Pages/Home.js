@@ -7,7 +7,7 @@ import IntroBody from "../components/IntroBody";
 import ProjectBody from "../components/ProjectBody";
 import TopButton from "../components/TopButton";
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   margin-top: 30px;
   width: 65vw;
 

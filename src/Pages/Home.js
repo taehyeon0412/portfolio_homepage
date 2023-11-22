@@ -46,9 +46,9 @@ export const Wrapper = styled.div`
 function Home() {
   return (
     <Wrapper>
-      <Navigation menuName={"contact"} />
+      <Navigation menuName={"home"} />
       <IntroBody />
-      <ProjectBody menuName={"project"} />
+      <ProjectBody menuName={"home"} />
       <TopButton />
     </Wrapper>
   );

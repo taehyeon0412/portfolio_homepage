@@ -103,8 +103,8 @@ const IntroP = styled.p`
   line-height: 1.5;
   opacity: 0;
 
-  animation: fadein 3s;
-  animation-delay: 3s;
+  animation: fadein 2s;
+  animation-delay: 2s;
   @keyframes fadein {
     from {
       opacity: 0;
@@ -156,7 +156,7 @@ function IntroBody() {
 
       return result;
     });
-  }, 100);
+  }, 50);
 
   return (
     <Wrapper>

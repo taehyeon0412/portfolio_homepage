@@ -1,9 +1,10 @@
 import "./css/App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 
 //pages
 import Home from "./Pages/Home";
-import { useEffect } from "react";
+import About from "./Pages/About";
 
 function App() {
   useEffect(() => {
@@ -22,8 +23,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/:menuName/contact-me" element={<Home />} />
-        <Route path="/:menuName/:Img_id" element={<Home />} />
+        <Route path="/home/*" element={<Home />} />
+        <Route path="/about/*" element={<About />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>

@@ -209,7 +209,7 @@ function ContactModal({ menuName }) {
   //클릭하고 있는 contact 모달 매치 */
 
   const overlayClicked = () => {
-    navigate(`/`, { replace: true });
+    navigate(`/${menuName}`, { replace: true });
   };
   //오버레이 클릭시 홈으로 이동
 

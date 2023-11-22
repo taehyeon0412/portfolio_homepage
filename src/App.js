@@ -6,6 +6,9 @@ import { useEffect } from "react";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 
+//component
+import Background from "./components/Background";
+
 function App() {
   useEffect(() => {
     const preventGoBack = () => {
@@ -22,8 +25,10 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Background />
       <Routes>
         <Route path="/home/*" element={<Home />} />
+        <Route path="/project/*" element={<Home />} />
         <Route path="/about/*" element={<About />} />
         <Route path="/" element={<Home />} />
       </Routes>

@@ -48,7 +48,7 @@ function Home() {
     <Wrapper>
       <Navigation menuName={"home"} />
       <IntroBody />
-      <ProjectBody menuName={"home"} />
+      <ProjectBody menuName={"project"} />
       <TopButton />
     </Wrapper>
   );

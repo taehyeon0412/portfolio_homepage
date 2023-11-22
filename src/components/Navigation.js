@@ -9,11 +9,11 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
-  width: 100%;
   margin-bottom: 20px;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.8);
   gap: 20px;
+  width: 100%;
 
   @media (max-width: 600px) {
     font-size: 16px;

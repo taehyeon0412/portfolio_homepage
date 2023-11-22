@@ -39,6 +39,6 @@ body::-webkit-scrollbar {
 }
 
 #root {
-  background-color: black;
+  background-color: transparent;
   -webkit-tap-highlight-color: transparent;
 }

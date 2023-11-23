@@ -10,6 +10,8 @@ import contact_img from "../assets/contact_img.webp";
 
 //data
 import profileData from "../data/profile.json";
+import educationData from "../data/education.json";
+import certificateData from "../data/certificate.json";
 
 const Wrapper = styled.div`
   ${commonStyle}
@@ -103,7 +105,75 @@ const ProfileContent = styled.p`
 
 //프로필
 
-const DetailWrapper = styled.div``;
+const DetailWrapper = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 20px;
+  padding-left: 30px;
+`;
+
+const Title = styled.h2`
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 40px;
+
+  @media (max-width: 1600px) {
+    font-size: 25px;
+  }
+`;
+
+const DetailDiv = styled.ul`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
+`;
+
+const CertificateDetail = styled(DetailDiv)`
+  gap: 20px;
+`;
+
+const DetailItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+const CertificateItem = styled(DetailItem)`
+  margin-bottom: 50px;
+
+  @media (max-width: 1400px) {
+    margin-bottom: 30px;
+  }
+`;
+
+const Label = styled.label`
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  white-space: nowrap; //줄바꿈 금지
+
+  &::before {
+    content: "";
+    width: 3px;
+    height: 16px;
+    background-color: white;
+    display: inline-block;
+    margin-right: 10px;
+  }
+`;
+
+const ItemTitle = styled.h3`
+  font-weight: 600;
+  font-size: 17px;
+`;
+
+const Desc = styled.p`
+  white-space: pre;
+  font-size: 13px;
+`;
 
 //--------------------------------------styled
 
@@ -141,7 +211,37 @@ function About() {
         </ProfileWrapper>
         {/* 프로필 */}
 
-        <DetailWrapper></DetailWrapper>
+        <DetailWrapper>
+          <div>
+            <Title>Education</Title>
+
+            <DetailDiv>
+              {educationData.map((item) => (
+                <DetailItem key={item.id}>
+                  <Label>{item.date}</Label>
+                  <ItemTitle>{item.title}</ItemTitle>
+                  <Desc>{item.desc}</Desc>
+                </DetailItem>
+              ))}
+            </DetailDiv>
+          </div>
+          {/*교육 섹터*/}
+
+          <div>
+            <Title>Certificate</Title>
+
+            <CertificateDetail>
+              {certificateData.map((item) => (
+                <CertificateItem key={item.id}>
+                  <Label>{item.title}</Label>
+                  <Desc>{item.date}</Desc>
+                  <Desc>{item.desc}</Desc>
+                </CertificateItem>
+              ))}
+            </CertificateDetail>
+          </div>
+          {/*자격증 섹터*/}
+        </DetailWrapper>
         {/* 이력 디테일 */}
       </Container>
     </Wrapper>

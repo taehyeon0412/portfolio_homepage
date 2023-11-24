@@ -212,10 +212,10 @@ function PortfolioItem({ item, menuName }) {
   const navigate = useNavigate();
   const width = useWindowDimensions();
 
-  const modalMatch = useMatch(`/${menuName}/:Img_id`);
+  const modalMatch = useMatch(`/home/${menuName}/:Img_id`);
 
   const onBoxClicked = () => {
-    navigate(`/${menuName}/${item.Img_id}`, { replace: true });
+    navigate(`/home/${menuName}/${item.Img_id}`, { replace: true });
 
     if (modalMatch) {
       console.log(`모달매치됨 +${menuName} ${item.Img_id}`);

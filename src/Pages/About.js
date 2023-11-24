@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   ${commonStyle}
   grid-template-rows: 70px 700px;
   opacity: ${(props) => (props.show === "true" ? "1" : "0")};
-  transition: opacity 3s ease;
+  transition: opacity 1s ease;
 
   @media (max-width: 850px) {
     grid-template-rows: 70px auto;
@@ -64,6 +64,11 @@ const ProfileImg = styled.div`
     max-width: 100%;
     max-height: 100%;
     border-radius: 100px;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
   }
 
   @media (max-width: 1600px) {

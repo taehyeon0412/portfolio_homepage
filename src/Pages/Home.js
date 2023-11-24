@@ -46,7 +46,7 @@ const Wrapper = styled.div`
   grid-template-rows: 70px 500px auto;
   ${commonStyle}
   opacity: ${(props) => (props.show === "true" ? "1" : "0")};
-  transition: opacity 3s ease;
+  transition: opacity 1s ease;
 `;
 
 function Home() {

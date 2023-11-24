@@ -103,6 +103,11 @@ const IntroduceImg = styled.div`
     max-width: 100%;
     max-height: 100%;
     border-radius: 20px;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
   }
 `;
 

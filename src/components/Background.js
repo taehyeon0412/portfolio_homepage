@@ -19,22 +19,18 @@ const Yellow = styled.svg`
   top: 0;
   right: 0;
   ${(props) =>
-    props.location === "/"
+    props.location === "/" ||
+    props.location === "/home" ||
+    props.location.startsWith("/home/")
       ? css`
           width: 425px;
           filter: blur(100px);
-          transform: translate(-30vw, 50vh);
+          transform: translate(-50vw, 50vh);
         `
-      : props.location === "/about"
-      ? css`
+      : css`
           width: 700px;
           filter: blur(150px);
           transform: translate(-40vw, 10vh) rotate(20deg);
-        `
-      : css`
-          width: 405px;
-          filter: blur(100px);
-          transform: translate(-60vw, 50vh) rotate(174deg);
         `}
 `;
 
@@ -42,22 +38,18 @@ const Blue = styled.svg`
   top: 0;
   right: 0;
   ${(props) =>
-    props.location === "/"
+    props.location === "/" ||
+    props.location === "/home" ||
+    props.location.startsWith("/home/")
       ? css`
           width: 573px;
           filter: blur(100px);
           transform: translate(-10vw, 20vh);
         `
-      : props.location === "/about"
-      ? css`
+      : css`
           width: 500px;
           transform: translate(5vw, 30vh) rotate(45deg);
           filter: blur(150px);
-        `
-      : css`
-          width: 660px;
-          transform: translate(-20vw, -5vh) rotate(280deg);
-          filter: blur(100px);
         `}
 `;
 

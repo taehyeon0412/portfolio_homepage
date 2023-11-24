@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useMatch, useNavigate } from "react-router-dom";
 import React from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 //assets
 import { ReactComponent as GithubIcon } from "../assets/github.svg";
@@ -8,6 +9,9 @@ import { ReactComponent as LinkIcon } from "../assets/link.svg";
 
 //util
 import useWindowDimensions from "./../util/useWindow";
+
+//component
+import ProjectModal from "./ProjectModal";
 
 const PortfolioDiv = styled.div`
   margin-bottom: 120px;
@@ -21,9 +25,9 @@ const PortfolioDiv = styled.div`
     border-radius: 20px;
     width: 100%;
 
-    /* &:hover {
+    &:hover {
       cursor: pointer;
-    } */
+    }
 
     -webkit-user-drag: none;
     -khtml-user-drag: none;
@@ -186,8 +190,10 @@ const PortfolioDescriptionDiv = ({
     {/* 타이틀+설명 */}
 
     <PortfolioDcSkillDiv>
-      {skill.map((skill, index) => (
-        <PortfolioDcSkill key={index}>{skill}</PortfolioDcSkill>
+      {skill.map((skill) => (
+        <PortfolioDcSkill key={Date.now() + Math.random()}>
+          {skill}
+        </PortfolioDcSkill>
       ))}
       {/* skill 부분 map으로 각각 div로 불러옴  */}
     </PortfolioDcSkillDiv>
@@ -221,12 +227,12 @@ function PortfolioItem({ item, menuName }) {
       console.log(`모달매치됨 +${menuName} ${item.Img_id}`);
     }
   };
-  //모달 매치기능은 넣어놨으나 내용물을 뭘 할지 구상이 안되서 일단 보류
 
   const contentRender =
     width <= 850 ? (
       <>
-        <img
+        <motion.img
+          layoutId={modalMatch?.params.Img_id}
           src={item.Img}
           alt="portfolio_Img"
           onClick={() => {
@@ -237,7 +243,8 @@ function PortfolioItem({ item, menuName }) {
       </>
     ) : item.Img_id % 2 === 1 ? (
       <>
-        <img
+        <motion.img
+          layoutId={modalMatch?.params.Img_id}
           src={item.Img}
           alt="portfolio_Img"
           onClick={() => {
@@ -249,7 +256,8 @@ function PortfolioItem({ item, menuName }) {
     ) : (
       <>
         <PortfolioDescriptionDiv {...item} />
-        <img
+        <motion.img
+          layoutId={modalMatch?.params.Img_id}
           src={item.Img}
           alt="portfolio_Img"
           onClick={() => {
@@ -259,7 +267,19 @@ function PortfolioItem({ item, menuName }) {
       </>
     );
 
-  return <PortfolioDiv>{contentRender}</PortfolioDiv>;
+  return (
+    <PortfolioDiv>
+      <AnimatePresence>
+        {contentRender}
+        {modalMatch ? (
+          <ProjectModal
+            menuName={menuName}
+            Img_id={Number(modalMatch.params.Img_id)}
+          />
+        ) : null}
+      </AnimatePresence>
+    </PortfolioDiv>
+  );
 }
 
 export default React.memo(PortfolioItem);

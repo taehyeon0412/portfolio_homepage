@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useMatch, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import React from "react";
 
 //Components
 import ContactModal from "./ContactModal";
@@ -83,4 +84,4 @@ function Navigation({ menuName }) {
   );
 }
 
-export default Navigation;
+export default React.memo(Navigation);

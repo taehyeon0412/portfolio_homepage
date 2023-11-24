@@ -10,7 +10,7 @@ import { ReactComponent as GithubIcon } from "../assets/contact_github.svg";
 import { ReactComponent as EmailIcon } from "../assets/email.svg";
 import { ReactComponent as BlogIcon } from "../assets/blog.svg";
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   html{overflow: hidden;}
 `;
 //모달창이 켜졌을때 html 스크롤을 막음

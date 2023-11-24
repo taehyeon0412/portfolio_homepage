@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 const Base = styled.div`
-  width: 100vw;
+  width: 65vw;
   height: 100vh;
   position: absolute;
   z-index: -1;

@@ -18,6 +18,11 @@ const Wrapper = styled.div`
   grid-template-rows: 70px 700px;
   opacity: ${(props) => (props.show === "true" ? "1" : "0")};
   transition: opacity 3s ease;
+
+  @media (max-width: 850px) {
+    grid-template-rows: 70px auto;
+    margin-bottom: 100px;
+  }
 `;
 
 const Container = styled.div`
@@ -30,11 +35,21 @@ const Container = styled.div`
   @media (max-width: 1600px) {
     grid-template-columns: 300px auto;
   }
+
+  @media (max-width: 850px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const ProfileWrapper = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 850px) {
+    align-items: center;
+    margin-bottom: 100px;
+  }
 `;
 
 const ProfileImg = styled.div`
@@ -55,6 +70,15 @@ const ProfileImg = styled.div`
     width: 280px;
     height: 300px;
   }
+
+  @media (max-width: 850px) {
+    width: 250px;
+    height: 200px;
+
+    img {
+      border-radius: 50px;
+    }
+  }
 `;
 
 const ProfileDetail = styled.ul``;
@@ -66,20 +90,37 @@ const NameWrapper = styled.div`
   margin: 20px;
   margin-bottom: 60px;
 
-  & h1 {
+  h1 {
     font-size: 65px;
     font-weight: 900;
   }
-  & h4 {
+  h4 {
     font-size: 20px;
     margin-top: 20px;
     font-weight: 400;
+  }
+
+  @media (max-width: 850px) {
+    margin-top: 50px;
+    align-items: center;
+
+    h1 {
+      font-size: 50px;
+    }
+
+    h4 {
+      font-size: 16px;
+    }
   }
 `;
 
 const ProfileItem = styled.li`
   display: flex;
   margin-bottom: 10px;
+
+  @media (max-width: 850px) {
+    margin-bottom: 5px;
+  }
 `;
 
 const ProfileLabel = styled.p`
@@ -97,10 +138,24 @@ const ProfileLabel = styled.p`
     display: inline-block;
     margin-right: 10px;
   }
+
+  @media (max-width: 850px) {
+    font-size: 14px;
+    width: 80px;
+
+    &::before {
+      width: 2px;
+      height: 12px;
+    }
+  }
 `;
 
 const ProfileContent = styled.p`
   font-weight: 700;
+
+  @media (max-width: 850px) {
+    font-size: 15px;
+  }
 `;
 
 //프로필
@@ -110,6 +165,14 @@ const DetailWrapper = styled.div`
   grid-template-rows: 1fr 1fr;
   margin-top: 20px;
   padding-left: 30px;
+
+  @media (max-width: 850px) {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 `;
 
 const Title = styled.h2`
@@ -120,6 +183,10 @@ const Title = styled.h2`
   @media (max-width: 1600px) {
     font-size: 25px;
   }
+
+  @media (max-width: 850px) {
+    font-size: 20px;
+  }
 `;
 
 const DetailDiv = styled.ul`
@@ -128,10 +195,19 @@ const DetailDiv = styled.ul`
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 60px;
+
+  @media (max-width: 850px) {
+    gap: 30px;
+    justify-content: baseline;
+  }
 `;
 
 const CertificateDetail = styled(DetailDiv)`
   gap: 20px;
+
+  @media (max-width: 1150px) {
+    gap: 0px;
+  }
 `;
 
 const DetailItem = styled.li`
@@ -163,11 +239,24 @@ const Label = styled.label`
     display: inline-block;
     margin-right: 10px;
   }
+
+  @media (max-width: 850px) {
+    font-size: 17px;
+
+    &::before {
+      width: 2px;
+      height: 12px;
+    }
+  }
 `;
 
 const ItemTitle = styled.h3`
   font-weight: 600;
   font-size: 17px;
+
+  @media (max-width: 850px) {
+    font-size: 15px;
+  }
 `;
 
 const Desc = styled.p`

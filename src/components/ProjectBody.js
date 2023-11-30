@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 //util
 import { portfolioList } from "./../util/portfolioList";
@@ -129,8 +130,8 @@ function ProjectBody({ menuName }) {
       <Section className="PortfolioSection">
         <h1>Project</h1>
 
-        {portfolioList.map((it, index) => (
-          <PortfolioItem key={it.Img_id} item={it} menuName={menuName} />
+        {portfolioList.map((it) => (
+          <PortfolioItem key={uuidv4()} item={it} menuName={menuName} />
         ))}
       </Section>
 
@@ -147,8 +148,8 @@ function ProjectBody({ menuName }) {
         <SkillsHeader>Skills & Tools</SkillsHeader>
 
         <SkillsImgWrapper>
-          {skillList.map((skill, index) => (
-            <SkillsImg key={index}>
+          {skillList.map((skill) => (
+            <SkillsImg key={uuidv4()}>
               <img src={skill.icon} alt={skill.name} />
               <span>{skill.name}</span>
             </SkillsImg>

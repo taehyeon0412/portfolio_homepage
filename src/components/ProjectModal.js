@@ -13,52 +13,54 @@ const Overlay = styled(motion.div)`
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(250, 250, 250, 0.1);
   opacity: 0;
   z-index: 99;
 `;
 //모달창 오버레이
 
 const ModalBox = styled(motion.div)`
-  display: grid;
-  grid-template-rows: 45% 50%;
-
   position: fixed;
-  width: 420px;
-  height: 525px;
-  top: 20%;
+  width: 80%;
+  height: 90%;
+  top: 5%;
   bottom: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
-  background-color: white;
+  background-color: rgba(35, 35, 35, 1);
   border-radius: 20px;
   overflow: hidden;
   z-index: 100;
   user-select: none;
   padding: 0px 15px 0px 15px;
 
-  color: black;
-
   ::-webkit-scrollbar {
     display: none;
   }
+
+  @media (max-width: 850px) {
+    width: 100%;
+    height: 90%;
+  }
 `;
 //모달창
+
+const Container = styled.div``;
 
 //---------------------- styled
 
 function ProjectModal({ Img_id, menuName }) {
   const navigate = useNavigate();
 
-  const modalMatch = useMatch(`/home/${menuName}/${Img_id}`);
+  const modalMatch = useMatch(`/home/${menuName}/:Img_id`);
 
   const overlayClicked = () => {
     navigate(`/home`, { replace: true });
   };
   //오버레이 클릭시 홈으로 이동
 
-  return (
+  return modalMatch ? (
     <>
       <GlobalStyle />
 
@@ -69,9 +71,16 @@ function ProjectModal({ Img_id, menuName }) {
         initial={{ opacity: 0 }}
       />
 
-      <ModalBox layoutId={modalMatch?.params.Img_id}>{Img_id}</ModalBox>
+      <ModalBox
+        layoutId={modalMatch?.params.Img_id}
+        initial={{ opacity: 0, y: 400 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+      >
+        {Img_id}
+      </ModalBox>
     </>
-  );
+  ) : null;
 }
 
 export default React.memo(ProjectModal);

@@ -28,7 +28,7 @@ function App() {
       <Background />
       <Routes>
         <Route path="/home/*" element={<Home />} />
-        <Route path="/home/project/*" element={<Home />} />
+        <Route path="/home/project/:Img_id" element={<Home />} />
         <Route path="/about/*" element={<About />} />
         <Route path="/" element={<Home />} />
       </Routes>

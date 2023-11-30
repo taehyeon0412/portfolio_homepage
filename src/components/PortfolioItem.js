@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { useMatch, useNavigate } from "react-router-dom";
+import { useLocation, useMatch, useNavigate } from "react-router-dom";
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { v4 as uuidv4 } from "uuid";
 
 //assets
 import { ReactComponent as GithubIcon } from "../assets/github.svg";
@@ -21,6 +22,17 @@ const PortfolioDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
+  @media (max-width: 850px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+//포토폴리오 전체 div
+
+const PortfolioImgDiv = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+
   img {
     border-radius: 20px;
     width: 100%;
@@ -39,13 +51,7 @@ const PortfolioDiv = styled.div`
       margin-bottom: 20px;
     }
   }
-
-  @media (max-width: 850px) {
-    display: flex;
-    flex-direction: column;
-  }
 `;
-//포토폴리오 전체 div
 
 const PortfolioDc = styled.div`
   display: flex;
@@ -191,9 +197,7 @@ const PortfolioDescriptionDiv = ({
 
     <PortfolioDcSkillDiv>
       {skill.map((skill) => (
-        <PortfolioDcSkill key={Date.now() + Math.random()}>
-          {skill}
-        </PortfolioDcSkill>
+        <PortfolioDcSkill key={uuidv4()}>{skill}</PortfolioDcSkill>
       ))}
       {/* skill 부분 map으로 각각 div로 불러옴  */}
     </PortfolioDcSkillDiv>
@@ -216,69 +220,73 @@ const PortfolioDescriptionDiv = ({
 
 function PortfolioItem({ item, menuName }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const width = useWindowDimensions();
-
-  const modalMatch = useMatch(`/home/${menuName}/:Img_id`);
 
   const onBoxClicked = () => {
     navigate(`/home/${menuName}/${item.Img_id}`, { replace: true });
 
-    if (modalMatch) {
-      console.log(`모달매치됨 +${menuName} ${item.Img_id}`);
-    }
+    /*  if (modalMatch) {
+      console.log(`모달매치됨 +${menuName}/${item.Img_id}`);
+    } else {
+      console.log(`모달 매치 안됨 ${menuName}/${item.Img_id}`);
+    } */
   };
+
+  const modalMatch = useMatch(`/home/${menuName}/:Img_id`);
 
   const contentRender =
     width <= 850 ? (
-      <>
-        <motion.img
+      <PortfolioDiv>
+        <PortfolioImgDiv
           layoutId={modalMatch?.params.Img_id}
-          src={item.Img}
-          alt="portfolio_Img"
           onClick={() => {
-            onBoxClicked(item.Img_id);
+            onBoxClicked(menuName, item.Img_id);
           }}
-        />
+        >
+          <img src={item.Img} alt="portfolio_Img" />
+        </PortfolioImgDiv>
         <PortfolioDescriptionDiv {...item} />
-      </>
+      </PortfolioDiv>
     ) : item.Img_id % 2 === 1 ? (
-      <>
-        <motion.img
+      <PortfolioDiv>
+        <PortfolioImgDiv
           layoutId={modalMatch?.params.Img_id}
-          src={item.Img}
-          alt="portfolio_Img"
           onClick={() => {
-            onBoxClicked(item.Img_id);
+            onBoxClicked(menuName, item.Img_id);
           }}
-        />
+        >
+          <img src={item.Img} alt="portfolio_Img" />
+        </PortfolioImgDiv>
         <PortfolioDescriptionDiv {...item} />
-      </>
+      </PortfolioDiv>
     ) : (
-      <>
+      <PortfolioDiv>
         <PortfolioDescriptionDiv {...item} />
-        <motion.img
+        <PortfolioImgDiv
           layoutId={modalMatch?.params.Img_id}
-          src={item.Img}
-          alt="portfolio_Img"
           onClick={() => {
-            onBoxClicked(item.Img_id);
+            onBoxClicked(menuName, item.Img_id);
           }}
-        />
-      </>
+        >
+          <img src={item.Img} alt="portfolio_Img" />
+        </PortfolioImgDiv>
+      </PortfolioDiv>
     );
 
   return (
-    <PortfolioDiv>
+    <>
+      <AnimatePresence>{contentRender}</AnimatePresence>
+
       <AnimatePresence>
-        {contentRender}
         {modalMatch ? (
           <ProjectModal
             menuName={menuName}
-            Img_id={Number(modalMatch.params.Img_id)}
+            Img_id={modalMatch?.params.Img_id}
           />
         ) : null}
       </AnimatePresence>
-    </PortfolioDiv>
+    </>
   );
 }
 

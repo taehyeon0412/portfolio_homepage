@@ -229,7 +229,7 @@ const CertificateItem = styled(DetailItem)`
   }
 `;
 
-const Label = styled.label`
+export const Label = styled.label`
   display: flex;
   align-items: center;
   font-size: 20px;

@@ -7,6 +7,7 @@ import React from "react";
 //component
 import { GlobalStyle } from "./ContactModal";
 import { LinkDiv, LinkGithubIcon, LinkWepIcon } from "./PortfolioItem";
+import { Label } from "./../Pages/About";
 
 const Overlay = styled(motion.div)`
   position: fixed;
@@ -31,13 +32,26 @@ const ModalBox = styled(motion.div)`
   margin: 0 auto;
   background-color: rgba(35, 35, 35, 1);
   border-radius: 20px;
-  overflow: hidden;
   z-index: 100;
   user-select: none;
   padding: 0px 15px 0px 15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
-  ::-webkit-scrollbar {
-    display: none;
+  &::-webkit-scrollbar {
+    width: 8px; /* 스크롤바의 너비 */
+    border: 1px solid rgba(86, 86, 85, 1);
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(86, 86, 85, 1);
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 20px;
   }
 
   @media (max-width: 850px) {
@@ -50,7 +64,6 @@ const ModalBox = styled(motion.div)`
 
 const Container = styled.div`
   position: relative;
-  overflow-y: scroll;
 `;
 
 //모달창에서 설명으로 사용할 부분
@@ -118,6 +131,30 @@ const Title = styled.h3`
   margin-bottom: 20px;
 `;
 
+const MockupImgWrapper = styled.div`
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+
+  background-color: rgba(86, 86, 85, 1);
+`;
+
+const MockupImg = styled.img``;
+
+const InfoWrapper = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 100px;
+`;
+
+const InfoItem = styled.li`
+  font-size: 20px;
+`;
+
 //---------------------- styled
 
 function ProjectModal({ Img_id, menuName }) {
@@ -170,6 +207,23 @@ function ProjectModal({ Img_id, menuName }) {
             </Desc>
           </Header>
           {/* 헤더 */}
+
+          <MockupImgWrapper>
+            <MockupImg />
+          </MockupImgWrapper>
+          {/* Mockup이미지 */}
+
+          <InfoWrapper>
+            <InfoItem>
+              <Label>Duration</Label>
+            </InfoItem>
+            <InfoItem>
+              <Label>Skill</Label>
+            </InfoItem>
+            <InfoItem>
+              <Label>Goal</Label>
+            </InfoItem>
+          </InfoWrapper>
         </Container>
       </ModalBox>
     </>

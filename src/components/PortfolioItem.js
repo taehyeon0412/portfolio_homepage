@@ -155,7 +155,7 @@ const PortfolioDcSkill = styled.div`
 `;
 //포토폴리오 오른쪽 설명 개별 스킬div
 
-const LinkDiv = styled.div`
+export const LinkDiv = styled.div`
   display: flex;
   margin-top: 10px;
   gap: 20px;
@@ -166,6 +166,7 @@ width: 40px;
 height: 40px;
 fill: white;
 
+
 &:hover {
   cursor: pointer;
   fill : rgba(255, 255, 255, 0.5);
@@ -173,11 +174,11 @@ fill: white;
   }
 `;
 
-const LinkGithubIcon = styled(GithubIcon)`
+export const LinkGithubIcon = styled(GithubIcon)`
   ${commonLinkStyle}
 `;
 
-const LinkWepIcon = styled(LinkIcon)`
+export const LinkWepIcon = styled(LinkIcon)`
   ${commonLinkStyle}
 `;
 
@@ -225,15 +226,15 @@ function PortfolioItem({ item, menuName }) {
 
   const onBoxClicked = () => {
     navigate(`/home/${menuName}/${item.Img_id}`, { replace: true });
-
-    /*  if (modalMatch) {
-      console.log(`모달매치됨 +${menuName}/${item.Img_id}`);
-    } else {
-      console.log(`모달 매치 안됨 ${menuName}/${item.Img_id}`);
-    } */
   };
 
-  const modalMatch = useMatch(`/home/${menuName}/:Img_id`);
+  const modalMatch = useMatch(`/home/${menuName}/${item.Img_id}`);
+
+  /* if (modalMatch) {
+    console.log(`모달매치됨 +${menuName}/${item.Img_id}`);
+  } else {
+    console.log(`모달 매치 안됨 ${menuName}/${item.Img_id}`);
+  } */
 
   const contentRender =
     width <= 850 ? (

@@ -6,6 +6,7 @@ import React from "react";
 
 //component
 import { GlobalStyle } from "./ContactModal";
+import { LinkDiv, LinkGithubIcon, LinkWepIcon } from "./PortfolioItem";
 
 const Overlay = styled(motion.div)`
   position: fixed;
@@ -40,13 +41,82 @@ const ModalBox = styled(motion.div)`
   }
 
   @media (max-width: 850px) {
+    top: 0;
     width: 100%;
-    height: 90%;
+    height: 100vh;
   }
 `;
-//모달창
+//모달창 전체
 
-const Container = styled.div``;
+const Container = styled.div`
+  position: relative;
+  overflow-y: scroll;
+`;
+
+//모달창에서 설명으로 사용할 부분
+
+const CloseBtnDiv = styled.div`
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const CloseBtn = styled.div`
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  margin-left: 0;
+  margin-top: 10px;
+  z-index: 100;
+  cursor: pointer;
+  color: white;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  i {
+    font-size: 20px;
+  }
+`;
+
+//CloseBtn을 모달창에서 고정시키기위해 position: sticky를 사용함
+
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Hr = styled.span`
+  width: 170px;
+  height: 1px;
+  background-color: white;
+  display: block;
+  margin-bottom: 15px;
+`;
+//가로 선
+
+const Desc = styled.p`
+  word-break: keep-all;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-top: 20px;
+`;
+
+const Title = styled.h3`
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 20px;
+`;
 
 //---------------------- styled
 
@@ -72,12 +142,35 @@ function ProjectModal({ Img_id, menuName }) {
       />
 
       <ModalBox
-        layoutId={modalMatch?.params.Img_id}
+        layoutId={Img_id}
         initial={{ opacity: 0, y: 400 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
       >
-        {Img_id}
+        <Container>
+          <CloseBtnDiv>
+            <CloseBtn onClick={overlayClicked}>
+              <i className="fa-solid fa-circle-xmark"></i>
+            </CloseBtn>
+          </CloseBtnDiv>
+
+          <Header>
+            <Hr />
+            <Desc>개인 프로젝트</Desc>
+            <Title>포트폴리오 홈페이지</Title>
+
+            <LinkDiv>
+              <LinkGithubIcon />
+              <LinkWepIcon />
+            </LinkDiv>
+
+            <Desc>
+              진행했던 프로젝트와 이력들을 깔끔하게 보여줄 수 있도록 포트폴리오
+              홈페이지를 만들었습니다.
+            </Desc>
+          </Header>
+          {/* 헤더 */}
+        </Container>
       </ModalBox>
     </>
   ) : null;

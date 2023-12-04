@@ -57,6 +57,12 @@ const ModalBox = styled(motion.div)`
     border-radius: 20px;
   }
 
+  @media (min-width: 1450px) {
+    width: 1160px;
+    height: 98%;
+    top: 1%;
+  }
+
   @media (max-width: 850px) {
     top: 0;
     width: 100%;
@@ -138,17 +144,24 @@ const Title = styled.h3`
 
 const MockupImgWrapper = styled.div`
   width: 100%;
-  height: 400px;
+  height: 500px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+
   margin-bottom: 50px;
 
-  background-color: rgba(86, 86, 85, 1);
+  @media (min-width: 1450px) {
+    height: 550px;
+  }
 `;
 
-const MockupImg = styled.img``;
+const MockupImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+`;
 
 const InfoWrapper = styled.ul`
   display: grid;
@@ -169,7 +182,7 @@ const FeaturesWrapper = styled.ul``;
 
 const Features = styled.h2`
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   font-size: 14px;
 `;
 
@@ -190,6 +203,7 @@ const FeatureImgWrapper = styled.div`
 
 const FeatureImg = styled.img`
   width: 100%;
+  max-width: 800px;
   object-fit: contain;
 `;
 
@@ -207,7 +221,7 @@ const FeatureDesc = styled.li`
   font-weight: 400;
   margin-left: 10px;
   margin-bottom: 10px;
-  line-height: 1.3;
+  line-height: 1.5;
   font-size: 16px;
 `;
 
@@ -274,7 +288,9 @@ function ProjectModal({ Img_id, menuName, data }) {
           {/* 헤더 */}
 
           <MockupImgWrapper>
-            <MockupImg />
+            <MockupImg
+              src={`${process.env.PUBLIC_URL}/assets/features/${Img_id}/${matchedData?.data.mockupImg}`}
+            />
           </MockupImgWrapper>
           {/* Mockup이미지 */}
 

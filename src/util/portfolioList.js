@@ -1,6 +1,6 @@
 export const portfolioList = [
   {
-    Img_id: 11,
+    Img_id: 1,
     Img: process.env.PUBLIC_URL + `/assets/portfolio1.webp`,
     Title: "나만의 감정 일기장",
     description:
@@ -10,7 +10,7 @@ export const portfolioList = [
     wepURL: "https://react-project-mydiary.web.app/",
   },
   {
-    Img_id: 12,
+    Img_id: 2,
     Img: process.env.PUBLIC_URL + `/assets/portfolio2.webp`,
     Title: "영화 정보 사이트",
     description:
@@ -21,7 +21,7 @@ export const portfolioList = [
       "https://taehyeon0412.github.io/react_movie-site-clone/#/react_movie-site-clone/home",
   },
   {
-    Img_id: 13,
+    Img_id: 3,
     Img: process.env.PUBLIC_URL + `/assets/portfolio3.webp`,
     Title: "Coin Tracker",
     description:
@@ -31,7 +31,7 @@ export const portfolioList = [
     wepURL: "https://taehyeon0412.github.io/react_my-coin-tracker/#/",
   },
   {
-    Img_id: 14,
+    Img_id: 4,
     Img: process.env.PUBLIC_URL + `/assets/portfolio4.webp`,
     Title: "메모 보드",
     description:
@@ -41,7 +41,7 @@ export const portfolioList = [
     wepURL: "https://taehyeon0412.github.io/react_my-trello/",
   },
   {
-    Img_id: 15,
+    Img_id: 5,
     Img: process.env.PUBLIC_URL + `/assets/portfolio5.webp`,
     Title: "웹 그림판",
     description: "그림판 프로그램의 기능들을 웹에서도 간편하게 할 수 있어요 \n",

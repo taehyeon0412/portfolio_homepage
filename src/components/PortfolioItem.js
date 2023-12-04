@@ -281,10 +281,7 @@ function PortfolioItem({ item, menuName }) {
 
       <AnimatePresence>
         {modalMatch ? (
-          <ProjectModal
-            menuName={menuName}
-            Img_id={modalMatch?.params.Img_id}
-          />
+          <ProjectModal menuName={menuName} Img_id={item.Img_id} />
         ) : null}
       </AnimatePresence>
     </>

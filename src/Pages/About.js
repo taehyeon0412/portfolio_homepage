@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 
 //component
 import Navigation from "../components/Navigation";
-import { commonStyle } from "./Home";
 
 //img
 import contact_img from "../assets/contact_img.webp";
@@ -12,6 +11,9 @@ import contact_img from "../assets/contact_img.webp";
 import profileData from "../data/profile.json";
 import educationData from "../data/education.json";
 import certificateData from "../data/certificate.json";
+
+//util
+import { commonStyle } from "./../util/commonStyle";
 
 const Wrapper = styled.div`
   ${commonStyle}

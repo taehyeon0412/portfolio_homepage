@@ -15,7 +15,7 @@ const Overlay = styled(motion.div)`
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(250, 250, 250, 0.1);
+  background-color: rgba(250, 250, 250, 0.5);
   opacity: 0;
   z-index: 99;
 `;
@@ -155,6 +155,18 @@ const InfoItem = styled.li`
   font-size: 20px;
 `;
 
+const FeaturesWrapper = styled.ul``;
+
+const Features = styled.h2``;
+
+const FeatureItem = styled.li``;
+
+const FeatureImgWrapper = styled.div``;
+
+const FeatureTextWrapper = styled.ul``;
+
+const FeatureDesc = styled.li``;
+
 //---------------------- styled
 
 function ProjectModal({ Img_id, menuName }) {
@@ -194,7 +206,7 @@ function ProjectModal({ Img_id, menuName }) {
           <Header>
             <Hr />
             <Desc>개인 프로젝트</Desc>
-            <Title>포트폴리오 홈페이지</Title>
+            <Title>포트폴리오 홈페이지 </Title>
 
             <LinkDiv>
               <LinkGithubIcon />
@@ -224,6 +236,12 @@ function ProjectModal({ Img_id, menuName }) {
               <Label>Goal</Label>
             </InfoItem>
           </InfoWrapper>
+          {/* Info */}
+
+          <FeaturesWrapper>
+            <Label>Features</Label>
+            <Features>프로젝트 특색 설명 </Features>
+          </FeaturesWrapper>
         </Container>
       </ModalBox>
     </>

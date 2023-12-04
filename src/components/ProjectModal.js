@@ -9,6 +9,9 @@ import { GlobalStyle } from "./ContactModal";
 import { LinkDiv, LinkGithubIcon, LinkWepIcon } from "./PortfolioItem";
 import { Label } from "./../Pages/About";
 
+//data
+import modalData from "../data/modalData.json";
+
 const Overlay = styled(motion.div)`
   position: fixed;
   top: 0;
@@ -106,6 +109,7 @@ const Header = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 70px;
 `;
 
 const Hr = styled.span`
@@ -122,7 +126,8 @@ const Desc = styled.p`
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 25px;
+  line-height: 1.3;
 `;
 
 const Title = styled.h3`
@@ -149,6 +154,7 @@ const InfoWrapper = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 100px;
+  grid-gap: 30px;
 `;
 
 const InfoItem = styled.li`
@@ -165,11 +171,17 @@ const FeatureImgWrapper = styled.div``;
 
 const FeatureTextWrapper = styled.ul``;
 
-const FeatureDesc = styled.li``;
+const FeatureDesc = styled.li`
+  list-style-type: "– ";
+  word-break: keep-all;
+  font-weight: 400;
+  margin-left: 10px;
+  line-height: 1.3;
+`;
 
 //---------------------- styled
 
-function ProjectModal({ Img_id, menuName }) {
+function ProjectModal({ Img_id, menuName, data }) {
   const navigate = useNavigate();
 
   const modalMatch = useMatch(`/home/${menuName}/:Img_id`);
@@ -178,6 +190,10 @@ function ProjectModal({ Img_id, menuName }) {
     navigate(`/home`, { replace: true });
   };
   //오버레이 클릭시 홈으로 이동
+
+  const matchedData = modalData
+    ? modalData.find((data) => data.Img_id === Img_id)
+    : null;
 
   return modalMatch ? (
     <>
@@ -205,18 +221,23 @@ function ProjectModal({ Img_id, menuName }) {
 
           <Header>
             <Hr />
-            <Desc>개인 프로젝트</Desc>
-            <Title>포트폴리오 홈페이지 </Title>
+            <Desc>{matchedData?.data.scale}</Desc>
+            <Title>{matchedData?.data.title}</Title>
 
             <LinkDiv>
-              <LinkGithubIcon />
-              <LinkWepIcon />
+              <a
+                href={data.githubURL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkGithubIcon />
+              </a>
+              <a href={data.wepURL} target="_blank" rel="noopener noreferrer">
+                <LinkWepIcon />
+              </a>
             </LinkDiv>
 
-            <Desc>
-              진행했던 프로젝트와 이력들을 깔끔하게 보여줄 수 있도록 포트폴리오
-              홈페이지를 만들었습니다.
-            </Desc>
+            <Desc>{matchedData?.data.desc}</Desc>
           </Header>
           {/* 헤더 */}
 
@@ -228,12 +249,19 @@ function ProjectModal({ Img_id, menuName }) {
           <InfoWrapper>
             <InfoItem>
               <Label>Duration</Label>
+              <Desc> {matchedData?.data.duration}</Desc>
             </InfoItem>
             <InfoItem>
               <Label>Skill</Label>
+              <Desc>{matchedData?.data.skill}</Desc>
             </InfoItem>
             <InfoItem>
               <Label>Goal</Label>
+              <Desc>
+                {matchedData?.data.goal.map((goal) => (
+                  <FeatureDesc key={goal.id}>{goal.text}</FeatureDesc>
+                ))}
+              </Desc>
             </InfoItem>
           </InfoWrapper>
           {/* Info */}

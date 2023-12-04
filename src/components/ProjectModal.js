@@ -161,22 +161,54 @@ const InfoItem = styled.li`
   font-size: 20px;
 `;
 
+const GoalUl = styled.ul`
+  margin-top: 25px;
+`;
+
 const FeaturesWrapper = styled.ul``;
 
-const Features = styled.h2``;
+const Features = styled.h2`
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-size: 14px;
+`;
 
-const FeatureItem = styled.li``;
+const FeatureItem = styled.li`
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-gap: 3rem;
+  margin-bottom: 100px;
+`;
 
-const FeatureImgWrapper = styled.div``;
+const FeatureImgWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+`;
+
+const FeatureImg = styled.img`
+  width: 100%;
+  object-fit: contain;
+`;
 
 const FeatureTextWrapper = styled.ul``;
+
+const FeatureTitle = styled.h2`
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 30px;
+`;
 
 const FeatureDesc = styled.li`
   list-style-type: "– ";
   word-break: keep-all;
   font-weight: 400;
   margin-left: 10px;
+  margin-bottom: 10px;
   line-height: 1.3;
+  font-size: 16px;
 `;
 
 //---------------------- styled
@@ -257,18 +289,35 @@ function ProjectModal({ Img_id, menuName, data }) {
             </InfoItem>
             <InfoItem>
               <Label>Goal</Label>
-              <Desc>
+              <GoalUl>
                 {matchedData?.data.goal.map((goal) => (
                   <FeatureDesc key={goal.id}>{goal.text}</FeatureDesc>
                 ))}
-              </Desc>
+              </GoalUl>
             </InfoItem>
           </InfoWrapper>
           {/* Info */}
 
           <FeaturesWrapper>
             <Label>Features</Label>
-            <Features>프로젝트 특색 설명 </Features>
+            <Features>{matchedData?.data.features}</Features>
+
+            {matchedData?.features.map((feature) => (
+              <FeatureItem key={feature.id}>
+                <FeatureImgWrapper>
+                  <FeatureImg
+                    src={`${process.env.PUBLIC_URL}/assets/features/${Img_id}/${feature.img}`}
+                  />
+                </FeatureImgWrapper>
+
+                <FeatureTextWrapper>
+                  <FeatureTitle>{feature.title}</FeatureTitle>
+                  {feature.desc.map((desc, idx) => (
+                    <FeatureDesc key={idx}>{desc.text}</FeatureDesc>
+                  ))}
+                </FeatureTextWrapper>
+              </FeatureItem>
+            ))}
           </FeaturesWrapper>
         </Container>
       </ModalBox>

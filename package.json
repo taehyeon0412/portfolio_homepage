@@ -9,6 +9,7 @@
     "@uidotdev/usehooks": "^2.4.1-experimental.0",
     "firebase": "^10.5.2",
     "framer-motion": "^9.1.7",
+    "gsap": "^3.12.3",
     "react": "^0.0.0-experimental-d803f519e-20231020",
     "react-dom": "^0.0.0-experimental-d803f519e-20231020",
     "react-router-dom": "^6.17.0",

@@ -116,6 +116,14 @@ const Header = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 70px;
+
+  @media (max-width: 660px) {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 450px) {
+    margin-bottom: 0px;
+  }
 `;
 
 const Hr = styled.span`
@@ -134,6 +142,10 @@ const Desc = styled.p`
   margin-bottom: 20px;
   margin-top: 25px;
   line-height: 1.3;
+
+  @media (max-width: 660px) {
+    font-size: 14px;
+  }
 `;
 
 const Title = styled.h3`
@@ -155,6 +167,11 @@ const MockupImgWrapper = styled.div`
   @media (min-width: 1450px) {
     height: 550px;
   }
+
+  @media (max-width: 450px) {
+    height: 380px;
+    margin-bottom: 30px;
+  }
 `;
 
 const MockupImg = styled.img`
@@ -168,6 +185,11 @@ const InfoWrapper = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 100px;
   grid-gap: 30px;
+
+  @media (max-width: 660px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const InfoItem = styled.li`
@@ -191,6 +213,11 @@ const FeatureItem = styled.li`
   grid-template-columns: 1.5fr 1fr;
   grid-gap: 3rem;
   margin-bottom: 100px;
+
+  @media (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const FeatureImgWrapper = styled.div`
@@ -213,6 +240,10 @@ const FeatureTitle = styled.h2`
   font-size: 25px;
   font-weight: 700;
   margin-bottom: 30px;
+
+  @media (max-width: 660px) {
+    font-size: 20px;
+  }
 `;
 
 const FeatureDesc = styled.li`
@@ -223,6 +254,10 @@ const FeatureDesc = styled.li`
   margin-bottom: 10px;
   line-height: 1.5;
   font-size: 16px;
+
+  @media (max-width: 660px) {
+    font-size: 14px;
+  }
 `;
 
 //---------------------- styled
@@ -290,6 +325,7 @@ function ProjectModal({ Img_id, menuName, data }) {
           <MockupImgWrapper>
             <MockupImg
               src={`${process.env.PUBLIC_URL}/assets/features/${Img_id}/${matchedData?.data.mockupImg}`}
+              decoding="async"
             />
           </MockupImgWrapper>
           {/* Mockup이미지 */}
@@ -328,7 +364,7 @@ function ProjectModal({ Img_id, menuName, data }) {
 
                 <FeatureTextWrapper>
                   <FeatureTitle>{feature.title}</FeatureTitle>
-                  {feature.desc.map((desc, idx) => (
+                  {feature.desc?.map((desc, idx) => (
                     <FeatureDesc key={idx}>{desc.text}</FeatureDesc>
                   ))}
                 </FeatureTextWrapper>

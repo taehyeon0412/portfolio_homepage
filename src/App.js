@@ -8,6 +8,7 @@ import About from "./Pages/About";
 
 //component
 import Background from "./components/Background";
+import Loading from "./components/Loading";
 
 function App() {
   useEffect(() => {
@@ -23,15 +24,29 @@ function App() {
   }, []);
   //뒤로가기 막기
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2800);
+  }, []);
+
+  console.log(isLoading);
+
   return (
     <BrowserRouter>
       <Background />
-      <Routes>
-        <Route path="/home/*" element={<Home />} />
-        <Route path="/home/project/:Img_id" element={<Home />} />
-        <Route path="/about/*" element={<About />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Routes>
+          <Route path="/home/*" element={<Home />} />
+          <Route path="/home/project/:Img_id" element={<Home />} />
+          <Route path="/about/*" element={<About />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      )}
     </BrowserRouter>
   );
 }

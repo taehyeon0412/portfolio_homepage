@@ -31,6 +31,7 @@ function App() {
       setIsLoading(false);
     }, 2800);
   }, []);
+  //첫 화면 로딩 띄우기
 
   console.log(isLoading);
 

@@ -325,7 +325,6 @@ function ProjectModal({ Img_id, menuName, data }) {
           <MockupImgWrapper>
             <MockupImg
               src={`${process.env.PUBLIC_URL}/assets/features/${Img_id}/${matchedData?.data.mockupImg}`}
-              decoding="async"
             />
           </MockupImgWrapper>
           {/* Mockup이미지 */}

@@ -59,7 +59,7 @@ const SkillsHeader = styled.header`
 const SkillsImgWrapper = styled.div`
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
 `;
 
@@ -68,6 +68,9 @@ const SkillsImg = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  white-space: pre;
+
+  margin-bottom: 20px;
 
   img {
     width: 90px;
@@ -113,7 +116,7 @@ const SkillsImg = styled.div`
     }
 
     @media (max-width: 500px) {
-      font-size: 14px;
+      font-size: 13px;
     }
 
     @media (max-width: 385px) {

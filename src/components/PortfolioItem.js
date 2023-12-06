@@ -245,7 +245,10 @@ function PortfolioItem({ item, menuName }) {
             onBoxClicked(menuName, item.Img_id);
           }}
         >
-          <img src={item.Img} alt="portfolio_Img" />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/portfolio${item.Img_id}.webp`}
+            alt="portfolio_Img"
+          />
         </PortfolioImgDiv>
         <PortfolioDescriptionDiv {...item} />
       </PortfolioDiv>
@@ -257,7 +260,10 @@ function PortfolioItem({ item, menuName }) {
             onBoxClicked(menuName, item.Img_id);
           }}
         >
-          <img src={item.Img} alt="portfolio_Img" />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/portfolio${item.Img_id}.webp`}
+            alt="portfolio_Img"
+          />
         </PortfolioImgDiv>
         <PortfolioDescriptionDiv {...item} />
       </PortfolioDiv>
@@ -270,7 +276,10 @@ function PortfolioItem({ item, menuName }) {
             onBoxClicked(menuName, item.Img_id);
           }}
         >
-          <img src={item.Img} alt="portfolio_Img" />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/portfolio${item.Img_id}.webp`}
+            alt="portfolio_Img"
+          />
         </PortfolioImgDiv>
       </PortfolioDiv>
     );

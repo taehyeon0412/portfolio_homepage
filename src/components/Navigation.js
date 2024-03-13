@@ -42,6 +42,10 @@ const AboutDiv = styled.div`
   ${commonLinkStyle}
 `;
 
+const ProjectDiv = styled.div`
+  ${commonLinkStyle}
+`;
+
 const ContactDiv = styled(motion.div)`
   ${commonLinkStyle}
 `;
@@ -53,6 +57,10 @@ function Navigation({ menuName }) {
 
   const navigateToHome = () => {
     navigate("/home", { replace: true });
+  };
+
+  const navigateToProject = () => {
+    navigate("/project", { replace: true });
   };
 
   const navigateToAbout = () => {
@@ -72,7 +80,9 @@ function Navigation({ menuName }) {
   return (
     <Wrapper>
       <HomeDiv onClick={navigateToHome}>Home</HomeDiv>
+      <ProjectDiv onClick={navigateToProject}>Project</ProjectDiv>
       <AboutDiv onClick={navigateToAbout}>About</AboutDiv>
+
       <AnimatePresence>
         <ContactDiv onClick={navigateToModal} layoutId="contact" key="contact">
           Contact

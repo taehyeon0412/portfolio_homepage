@@ -23,14 +23,22 @@ const Yellow = styled.svg`
     props.location === "/home" ||
     props.location.startsWith("/home/")
       ? css`
-          width: 425px;
+          width: 455px;
           filter: blur(100px);
           transform: translate(-50vw, 50vh);
+
+          @media (max-width: 500px) {
+            width: 255px;
+          }
         `
       : css`
-          width: 700px;
+          width: 500px;
           filter: blur(150px);
           transform: translate(-40vw, 10vh) rotate(20deg);
+
+          @media (max-width: 500px) {
+            width: 355px;
+          }
         `}
 `;
 
@@ -42,14 +50,22 @@ const Blue = styled.svg`
     props.location === "/home" ||
     props.location.startsWith("/home/")
       ? css`
-          width: 573px;
-          filter: blur(100px);
-          transform: translate(-10vw, 20vh);
+          width: 443px;
+          filter: blur(80px);
+          transform: translate(0vw, 20vh);
+
+          @media (max-width: 500px) {
+            width: 245px;
+          }
         `
       : css`
           width: 500px;
           transform: translate(5vw, 30vh) rotate(45deg);
           filter: blur(150px);
+
+          @media (max-width: 500px) {
+            width: 305px;
+          }
         `}
 `;
 

@@ -97,6 +97,7 @@ const IntroTitle = styled.span`
 `;
 
 const IntroP = styled.p`
+  display: flex;
   position: relative;
   margin-top: 30px;
   color: rgba(255, 255, 255, 0.9);
@@ -119,6 +120,8 @@ const IntroP = styled.p`
 
   @media (max-width: 430px) {
     font-size: 15px;
+    justify-content: center;
+    text-align: center;
   }
 
   @media (max-width: 385px) {
@@ -149,7 +152,7 @@ function IntroBody() {
       let result = prev ? prev + completedTitle[count] : completedTitle[0];
 
       // count를 증가시킨다.
-      setCount((prev) => prev + 1);
+      setCount((prev) => prev + 0.5);
       //useInterval 버그인지 모르겠는데 1로 하면 1357..로 글자가 나와서0.5로 수정함
 
       /* 배포를 할때는 0.5로 하면 undefined가 나오는데 
@@ -167,13 +170,13 @@ function IntroBody() {
 
       <IntroTitle>{landingTitle}</IntroTitle>
 
-      <IntroP>
+      {/* <IntroP>
         차별화된 서비스를 만들어내는 개발자
         <br />
         꼼꼼하게 빈 틈을 채워나가는 개발자
         <br />
         사람들이 필요로 하는 것이 무엇인지 고민하는 개발자
-      </IntroP>
+      </IntroP> */}
     </Wrapper>
   );
 }

@@ -9,6 +9,7 @@ import About from "./Pages/About";
 //component
 import Background from "./components/Background";
 import Loading from "./components/Loading";
+import Project from "./Pages/Project";
 
 function App() {
   useEffect(() => {
@@ -43,7 +44,8 @@ function App() {
       ) : (
         <Routes>
           <Route path="/home/*" element={<Home />} />
-          <Route path="/home/project/:Img_id" element={<Home />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/project/:Img_id" element={<Project />} />
           <Route path="/about/*" element={<About />} />
           <Route path="/" element={<Home />} />
         </Routes>

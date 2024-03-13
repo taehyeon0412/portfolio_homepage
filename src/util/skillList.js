@@ -25,11 +25,11 @@ export const skillList = [
     icon: require("../assets/css_icon.svg").default,
   },
   {
-    name: "Tailwind \n학습중",
+    name: "Tailwind",
     icon: require("../assets/tailwind_icon.svg").default,
   },
   {
-    name: "Next JS \n학습중",
+    name: "Next JS",
     icon: require("../assets/nextjs_icon.svg").default,
   },
 ];

@@ -225,10 +225,10 @@ function PortfolioItem({ item, menuName }) {
   const width = useWindowDimensions();
 
   const onBoxClicked = () => {
-    navigate(`/home/${menuName}/${item.Img_id}`, { replace: true });
+    navigate(`/${menuName}/${item.Img_id}`, { replace: true });
   };
 
-  const modalMatch = useMatch(`/home/${menuName}/${item.Img_id}`);
+  const modalMatch = useMatch(`/${menuName}/${item.Img_id}`);
 
   /* if (modalMatch) {
     console.log(`모달매치됨 +${menuName}/${item.Img_id}`);

@@ -265,10 +265,10 @@ const FeatureDesc = styled.li`
 function ProjectModal({ Img_id, menuName, data }) {
   const navigate = useNavigate();
 
-  const modalMatch = useMatch(`/home/${menuName}/:Img_id`);
+  const modalMatch = useMatch(`/${menuName}/:Img_id`);
 
   const overlayClicked = () => {
-    navigate(`/home`, { replace: true });
+    navigate(`/Project`, { replace: true });
   };
   //오버레이 클릭시 홈으로 이동
 

@@ -15,8 +15,8 @@ export const portfolioList = [
     description:
       "대화를 통해 일상적인 질문부터 복잡한 고민까지, \n 다양한 상황에 꼭 맞는 분야별 위인들과 1:1 대화를 \n 나눌 수 있어요!",
     skill: ["Next.js", "TypeScript", "Vercel", "MongoDB", "API"],
-    githubURL: "null",
-    wepURL: "null",
+    githubURL: null,
+    wepURL: null,
   },
   {
     Img_id: 11,

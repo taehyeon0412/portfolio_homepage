@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled, { createGlobalStyle } from "styled-components";
 import { portfolioList } from "../util/portfolioList";
 import { useMatch, useNavigate } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
 
 //component
 import { GlobalStyle } from "./ContactModal";
@@ -26,9 +26,9 @@ const Overlay = styled(motion.div)`
 
 const ModalBox = styled(motion.div)`
   position: fixed;
-  width: 80%;
-  height: 90%;
-  top: 5%;
+  width: 90%;
+  height: 100%;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -58,9 +58,8 @@ const ModalBox = styled(motion.div)`
   }
 
   @media (min-width: 1450px) {
-    width: 1160px;
-    height: 98%;
-    top: 1%;
+    width: 1250px;
+    height: 100%;
   }
 
   @media (max-width: 850px) {
@@ -284,6 +283,19 @@ function ProjectModal({ Img_id, menuName, data }) {
   const matchedData = modalData
     ? modalData.find((data) => data.Img_id === Img_id)
     : null;
+
+  useEffect(() => {
+    const scrollY = window.scrollY;
+
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "visible";
+      window.scrollTo(0, scrollY);
+      console.log("위치 조정됨");
+    };
+  }, [modalMatch]);
+  //모달창이 열렸을때 스크롤이 위로 올라가는 버그가 있어서 추가함
 
   return modalMatch ? (
     <>

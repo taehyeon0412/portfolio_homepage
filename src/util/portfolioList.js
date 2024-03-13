@@ -1,5 +1,24 @@
 export const portfolioList = [
   {
+    Img_id: 9,
+
+    Title: "챌린지뱅크",
+    description: "null",
+    skill: ["React", "JavaScript", "CSS", "Firebase"],
+    githubURL: "https://github.com/taehyeon0412/portfolio_homepage",
+    wepURL: "https://taehyeon-my-homepage.web.app/",
+  },
+  {
+    Img_id: 10,
+
+    Title: "별별 조언단",
+    description:
+      "대화를 통해 일상적인 질문부터 복잡한 고민까지, \n 다양한 상황에 꼭 맞는 분야별 위인들과 1:1 대화를 \n 나눌 수 있어요!",
+    skill: ["Next.js", "TypeScript", "Vercel", "MongoDB", "API"],
+    githubURL: "null",
+    wepURL: "null",
+  },
+  {
     Img_id: 11,
 
     Title: "포트폴리오",

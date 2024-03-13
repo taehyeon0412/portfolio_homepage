@@ -136,12 +136,15 @@ const Hr = styled.span`
 //가로 선
 
 const Desc = styled.p`
+  display: flex;
+  text-align: center;
   word-break: keep-all;
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 20px;
   margin-top: 25px;
   line-height: 1.3;
+  white-space: pre-line;
 
   @media (max-width: 660px) {
     font-size: 14px;
@@ -265,12 +268,18 @@ const FeatureDesc = styled.li`
 function ProjectModal({ Img_id, menuName, data }) {
   const navigate = useNavigate();
 
-  const modalMatch = useMatch(`/${menuName}/:Img_id`);
+  const modalMatch = useMatch(`/project/${menuName}/${Img_id}`);
 
   const overlayClicked = () => {
-    navigate(`/Project`, { replace: true });
+    navigate(`/project`, { replace: true });
   };
   //오버레이 클릭시 홈으로 이동
+
+  /* if (modalMatch) {
+    console.log("모달매치됨");
+  } else {
+    console.log("모달매치안됨");
+  } */
 
   const matchedData = modalData
     ? modalData.find((data) => data.Img_id === Img_id)

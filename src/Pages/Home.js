@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 //component
 import Navigation from "../components/Navigation";
 import IntroBody from "../components/IntroBody";
-import ProjectBody, { Section } from "../components/ProjectBody";
-import TopButton from "../components/TopButton";
 
 //Util
 import { commonStyle } from "./../util/commonStyle";
@@ -138,7 +136,7 @@ function Home() {
       <IntroBody />
 
       <ResumeDiv>
-        <ResumeWrapper href="" target="_blank">
+        <ResumeWrapper href="aa" target="_blank">
           <Circle1
             viewBox="0 0 209 123"
             fill="none"

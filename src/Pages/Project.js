@@ -6,14 +6,11 @@ import Navigation from "../components/Navigation";
 import TopButton from "./../components/TopButton";
 
 const Wrapper = styled.div`
+  min-height: 100vh;
+  grid-template-rows: 70px 500px auto;
   ${commonStyle}
-  grid-template-rows: 70px 700px;
   opacity: ${(props) => (props.show === "true" ? "1" : "0")};
   transition: opacity 1s ease;
-
-  @media (max-width: 850px) {
-    grid-template-rows: 70px auto;
-  }
 `;
 
 function Project() {
@@ -26,8 +23,8 @@ function Project() {
 
   return (
     <Wrapper show={showWrapper}>
-      <Navigation menuName={"about"} />
-      <ProjectBody menuName={"project"} />
+      <Navigation menuName={"project"} />
+      <ProjectBody menuName={"pt"} />
       <TopButton />
     </Wrapper>
   );

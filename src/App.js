@@ -44,8 +44,8 @@ function App() {
       ) : (
         <Routes>
           <Route path="/home/*" element={<Home />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/project/:Img_id" element={<Project />} />
+          <Route path="/project/*" element={<Project />} />
+          <Route path="/project/pt/:Img_id" element={<Project />} />
           <Route path="/about/*" element={<About />} />
           <Route path="/" element={<Home />} />
         </Routes>

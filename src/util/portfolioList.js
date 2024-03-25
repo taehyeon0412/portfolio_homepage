@@ -3,10 +3,11 @@ export const portfolioList = [
     Img_id: 9,
 
     Title: "챌린지뱅크",
-    description: "null",
-    skill: ["React", "JavaScript", "CSS", "Firebase"],
-    githubURL: "https://github.com/taehyeon0412/portfolio_homepage",
-    wepURL: "https://taehyeon-my-homepage.web.app/",
+    description:
+      "매일 캘린더 기록으로 채워지는 나만의 뱅크,\n 챌린지를 통해 동기부여를 주는 서비스입니다.",
+    skill: ["TypeScript", "React", "JavaScript", "CSS", "Firebase"],
+    githubURL: "https://github.com/taehyeon0412/challenge_bank",
+    wepURL: "https://challengebank.web.app/",
   },
   {
     Img_id: 10,

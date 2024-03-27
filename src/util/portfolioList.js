@@ -5,7 +5,7 @@ export const portfolioList = [
     Title: "챌린지뱅크",
     description:
       "매일 캘린더 기록으로 채워지는 나만의 뱅크,\n 챌린지를 통해 동기부여를 주는 서비스입니다.",
-    skill: ["TypeScript", "React", "JavaScript", "CSS", "Firebase"],
+    skill: ["TypeScript", "React", "JavaScript", "Tailwind", "Firebase"],
     githubURL: "https://github.com/taehyeon0412/challenge_bank",
     wepURL: "https://challengebank.web.app/",
   },
@@ -15,7 +15,7 @@ export const portfolioList = [
     Title: "별별 조언단",
     description:
       "대화를 통해 일상적인 질문부터 복잡한 고민까지, \n 다양한 상황에 꼭 맞는 분야별 위인들과 1:1 대화를 \n 나눌 수 있어요!",
-    skill: ["Next.js", "TypeScript", "Vercel", "MongoDB", "API"],
+    skill: ["Next.js", "TypeScript", "Vercel", "NaverClover", "Tailwind"],
     githubURL: null,
     wepURL: null,
   },

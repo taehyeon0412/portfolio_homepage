@@ -8,6 +8,9 @@ import IntroBody from "../components/IntroBody";
 //Util
 import { commonStyle } from "./../util/commonStyle";
 
+//pdf
+import Resume from "../assets/resume.pdf";
+
 const Wrapper = styled.div`
   min-height: 90vh;
   grid-template-rows: 70px 500px auto;
@@ -136,7 +139,7 @@ function Home() {
       <IntroBody />
 
       <ResumeDiv>
-        <ResumeWrapper href="aa" target="_blank">
+        <ResumeWrapper href={Resume} target="_blank">
           <Circle1
             viewBox="0 0 209 123"
             fill="none"

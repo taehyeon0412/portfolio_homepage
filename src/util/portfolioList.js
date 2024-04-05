@@ -1,5 +1,21 @@
 export const portfolioList = [
   {
+    Img_id: 8,
+
+    Title: "당근마켓_CLONE",
+    description: "Next.js(ver.14)으로 만든 당근마켓 클론 프로젝트입니다.",
+    skill: [
+      "Next.js(ver.14)",
+      "TypeScript",
+      "React",
+      "Tailwind",
+      "Prisma",
+      "Vercel",
+    ],
+    githubURL: "",
+    wepURL: "",
+  },
+  {
     Img_id: 9,
 
     Title: "챌린지뱅크",

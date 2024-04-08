@@ -135,12 +135,12 @@ const PortfolioDcSkillDiv = styled.div`
   }
 
   @media (max-width: 560px) {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     width: 90%;
   }
 
   @media (max-width: 430px) {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
     width: 100%;
   }
 `;
@@ -252,7 +252,7 @@ function PortfolioItem({ item, menuName }) {
         </PortfolioImgDiv>
         <PortfolioDescriptionDiv {...item} />
       </PortfolioDiv>
-    ) : item.Img_id % 2 === 1 ? (
+    ) : item.Img_id % 2 === 0 ? (
       <PortfolioDiv>
         <PortfolioImgDiv
           layoutId={modalMatch?.params.Img_id}

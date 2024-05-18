@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import contact_img from "../assets/contact_img.webp";
 import { ReactComponent as GithubIcon } from "../assets/contact_github.svg";
 import { ReactComponent as EmailIcon } from "../assets/email.svg";
-import { ReactComponent as BlogIcon } from "../assets/blog.svg";
+import { ReactComponent as KakaoIcon } from "../assets/kakao.svg";
 
 export const GlobalStyle = createGlobalStyle`
   html{overflow: hidden;}
@@ -185,7 +185,7 @@ const ContactEmailIcon = styled(EmailIcon)`
   ${commonIconStyle}
 `;
 
-const ContactBlogIcon = styled(BlogIcon)`
+const ContactBlogIcon = styled(KakaoIcon)`
   ${commonIconStyle}
 `;
 
@@ -282,18 +282,14 @@ function ContactModal({ menuName }) {
 
           <ContactImgDiv>
             <a
-              href="https://taehyeon-smilestudy.tistory.com/"
+              href="https://open.kakao.com/o/sxhQAksg"
               target="_blank"
               rel="noopener noreferrer"
             >
               <ContactBlogIcon />
             </a>
 
-            <ContactSpan>
-              taehyeon-
-              <br />
-              smilestudy.tistory.com
-            </ContactSpan>
+            <ContactSpan>Kakao 오픈채팅</ContactSpan>
           </ContactImgDiv>
         </ContactDiv>
       </ModalBox>

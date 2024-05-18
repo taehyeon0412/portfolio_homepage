@@ -256,6 +256,7 @@ const FeatureDesc = styled.li`
   margin-bottom: 10px;
   line-height: 1.5;
   font-size: 16px;
+  white-space: pre-line;
 
   @media (max-width: 660px) {
     font-size: 14px;

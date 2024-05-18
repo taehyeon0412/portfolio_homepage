@@ -10,10 +10,11 @@ export const portfolioList = [
       "React",
       "Tailwind",
       "Prisma",
+      "GCP",
       "Vercel",
     ],
-    githubURL: "",
-    wepURL: "",
+    githubURL: "https://github.com/taehyeon0412/next_market_clone",
+    wepURL: "https://next-market-clone.vercel.app/",
   },
   {
     Img_id: 9,

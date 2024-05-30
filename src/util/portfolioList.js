@@ -7,11 +7,10 @@ export const portfolioList = [
     skill: [
       "Next.js(ver.14)",
       "TypeScript",
-      "React",
       "Tailwind",
       "Prisma",
-      "GCP",
       "Vercel",
+      "AWS S3",
     ],
     githubURL: "https://github.com/taehyeon0412/next_market_clone",
     wepURL: "https://next-market-clone.vercel.app/",

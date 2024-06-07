@@ -17,6 +17,12 @@ const Section = styled.section`
       font-size: 30px;
       color: rgba(255, 255, 255, 0.8);
       font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.8);
       margin-bottom: 50px;
     }
   }
@@ -113,6 +119,7 @@ function ProjectBody({ menuName }) {
     <Wrapper>
       <Section className="PortfolioSection">
         <h1>Project</h1>
+        <h3>※ 프로젝트를 클릭해 주세요</h3>
 
         {portfolioList.map((it) => (
           <PortfolioItem key={uuidv4()} item={it} menuName={menuName} />

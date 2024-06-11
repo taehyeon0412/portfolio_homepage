@@ -2,8 +2,9 @@ export const portfolioList = [
   {
     Img_id: 8,
 
-    Title: "당근마켓_CLONE",
-    description: "Next.js(ver.14)으로 만든 당근마켓 클론 프로젝트입니다.",
+    Title: "중고 마켓 플랫폼",
+    description:
+      "Next.js(ver.14)으로 만든 중고 마켓 플랫폼 입니다. \n 다양한 물품들을 거래해 보세요!",
     skill: [
       "Next.js(ver.14)",
       "TypeScript",

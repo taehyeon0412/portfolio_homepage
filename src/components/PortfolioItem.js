@@ -110,34 +110,10 @@ const PortfolioDc = styled.div`
 //포토폴리오 오른쪽 설명 div
 
 const PortfolioDcSkillDiv = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-
-  @media (max-width: 1150px) {
-    gap: 5px;
-  }
-
-  @media (max-width: 1100px) {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    width: 90%;
-    text-align: center;
-  }
-
-  @media (max-width: 950px) {
-    grid-template-columns: repeat(4, 1fr);
-    width: 90%;
-  }
-
-  @media (max-width: 850px) {
-    grid-template-columns: repeat(6, 1fr);
-    width: 90%;
-  }
-
-  @media (max-width: 560px) {
-    grid-template-columns: repeat(4, 1fr);
-    width: 90%;
-  }
+  width: 90%;
 
   @media (max-width: 430px) {
     grid-template-columns: repeat(3, auto);
@@ -147,6 +123,9 @@ const PortfolioDcSkillDiv = styled.div`
 //포토폴리오 오른쪽 설명 스킬div
 
 const PortfolioDcSkill = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: rgba(255, 255, 255, 0.9);
   font-size: 14px;
   padding: 5px 10px 5px 10px;
@@ -252,7 +231,7 @@ function PortfolioItem({ item, menuName }) {
         </PortfolioImgDiv>
         <PortfolioDescriptionDiv {...item} />
       </PortfolioDiv>
-    ) : item.Img_id % 2 === 0 ? (
+    ) : item.Img_id % 2 === 1 ? (
       <PortfolioDiv>
         <PortfolioImgDiv
           layoutId={modalMatch?.params.Img_id}

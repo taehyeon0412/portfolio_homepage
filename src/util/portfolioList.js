@@ -1,5 +1,24 @@
 export const portfolioList = [
   {
+    Img_id: 7,
+
+    Title: "Kable(카블)",
+    description:
+      "Next.js(ver.14)으로 만든 SNS 입니다. \n 카테고리로 소통하자! 카블",
+    skill: [
+      "Next.js(ver.14)",
+      "TypeScript",
+      "Tailwind",
+      "Prisma",
+      "ReactQuery",
+      "Firebase",
+      "AWS S3",
+      "Vercel",
+    ],
+    githubURL: "https://github.com/taehyeon0412/sns_kable",
+    wepURL: "https://sns-kable.vercel.app/",
+  },
+  {
     Img_id: 8,
 
     Title: "중고 마켓 플랫폼",

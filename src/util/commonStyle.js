@@ -4,7 +4,8 @@ export const commonStyle = `
 
   display: grid;
 
-  @media (max-width: 1400px) {
+
+  @media (max-width: 1661px) {
     width: 80vw;
   }
 

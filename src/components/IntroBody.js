@@ -133,7 +133,7 @@ const IntroP = styled.p`
 
 function IntroBody() {
   const completedTitle = useMemo(() => {
-    return "안녕하세요! \n 프론트엔드 개발자를 꿈꾸는 \n 곽태현입니다.";
+    return "안녕하세요! \n 프론트엔드 개발자 \n 곽태현입니다.";
   }, []);
   const [landingTitle, setLandingTitle] = useState("");
   const [count, setCount] = useState(0);

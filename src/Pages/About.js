@@ -11,9 +11,11 @@ import contact_img from "../assets/contact_img.webp";
 import profileData from "../data/profile.json";
 import educationData from "../data/education.json";
 import certificateData from "../data/certificate.json";
+import careerData from "../data/career.json";
 
 //util
 import { commonStyle } from "./../util/commonStyle";
+import { useModalScrollbarPadding } from "../util/useModalScrollbarPadding";
 
 const Wrapper = styled.div`
   ${commonStyle}
@@ -169,9 +171,13 @@ const ProfileContent = styled.p`
 
 const DetailWrapper = styled.div`
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0.7fr 0.9fr 0.9fr;
   margin-top: 20px;
   padding-left: 30px;
+
+  @media (min-width: 1662px) {
+    grid-template-rows: 0.6fr 0.6fr 1fr;
+  }
 
   @media (max-width: 850px) {
     display: flex;
@@ -185,7 +191,7 @@ const DetailWrapper = styled.div`
 const Title = styled.h2`
   font-size: 30px;
   font-weight: 900;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
   @media (max-width: 1600px) {
     font-size: 25px;
@@ -201,7 +207,7 @@ const DetailDiv = styled.ul`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 40px;
 
   @media (max-width: 850px) {
     gap: 30px;
@@ -224,7 +230,7 @@ const DetailItem = styled.li`
 `;
 
 const CertificateItem = styled(DetailItem)`
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 
   @media (max-width: 1400px) {
     margin-bottom: 30px;
@@ -269,6 +275,7 @@ const ItemTitle = styled.h3`
 const Desc = styled.p`
   white-space: pre;
   font-size: 13px;
+  line-height: 1.6;
 `;
 
 //--------------------------------------styled
@@ -280,6 +287,8 @@ function About() {
     setShowWrapper("true");
   }, []);
   // 로딩될 때, Wrapper의 opacity를 1로 변경
+
+  useModalScrollbarPadding();
 
   return (
     <Wrapper show={showWrapper}>
@@ -308,6 +317,21 @@ function About() {
         {/* 프로필 */}
 
         <DetailWrapper>
+          <div>
+            <Title>Career</Title>
+
+            <DetailDiv>
+              {careerData.map((item) => (
+                <DetailItem key={item.id}>
+                  <Label>{item.date}</Label>
+                  <ItemTitle>{item.title}</ItemTitle>
+                  <Desc>{item.desc}</Desc>
+                </DetailItem>
+              ))}
+            </DetailDiv>
+          </div>
+          {/* 커리어 */}
+
           <div>
             <Title>Education</Title>
 

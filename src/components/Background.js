@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import styled, { css } from "styled-components";
+import StarrySky from "./star";
 
 const Base = styled.div`
   width: 65vw;
@@ -74,8 +75,13 @@ const Blue = styled.svg`
 export default function Background() {
   const location = useLocation().pathname;
 
+  const isHome =
+    location === "/" || location === "/home" || location.startsWith("/home/");
+
   return (
     <Base>
+      <StarrySky />
+
       <Yellow
         viewBox="0 0 425 345"
         xmlns="http://www.w3.org/2000/svg"

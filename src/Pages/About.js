@@ -179,6 +179,10 @@ const DetailWrapper = styled.div`
     grid-template-rows: 0.6fr 0.6fr 1fr;
   }
 
+  @media (min-width: 1287px) {
+    grid-template-rows: 0.6fr 0.6fr 0.6fr;
+  }
+
   @media (max-width: 850px) {
     display: flex;
     flex-direction: column;

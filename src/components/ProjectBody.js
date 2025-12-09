@@ -132,7 +132,7 @@ function ProjectBody({ menuName }) {
         <SkillsImgWrapper>
           {skillList.map((skill) => (
             <SkillsImg key={uuidv4()}>
-              <img src={skill.icon} alt={skill.name} />
+              <img src={skill.icon} alt={skill.name} loading="lazy" />
               <span>{skill.name}</span>
             </SkillsImg>
           ))}

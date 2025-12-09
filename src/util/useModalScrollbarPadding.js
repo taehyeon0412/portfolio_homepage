@@ -8,7 +8,7 @@ export function useModalScrollbarPadding() {
     let timeoutId = null;
 
     // 1313px 이하에서만 동작
-    if (window.innerWidth > 1313) {
+    if (window.innerWidth > 1287) {
       // 데스크톱 사이즈에서는 항상 원복 상태 유지
       document.documentElement.style.overflow = "";
       document.documentElement.style.paddingRight = "";

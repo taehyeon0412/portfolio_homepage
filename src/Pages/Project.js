@@ -27,6 +27,10 @@ function Project() {
   useEffect(() => {
     let timeoutId = null;
 
+    if (window.innerWidth < 851) {
+      return;
+    }
+
     if (pathname === "/project/contact-me") {
       // 모달 열려있을 때: 바로 패딩/스크롤 설정
       document.documentElement.style.overflow = "hidden";
